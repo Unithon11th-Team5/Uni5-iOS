@@ -47,25 +47,28 @@ struct HomeView: View {
                     .tag(3)
 
             }
-            Button {
-                viewModel.trigger(.clickedToNavigate)
-            } label: {
-                ZStack {
-                    Circle()
-                        .frame(width: 56, height: 56)
-                        .foregroundStyle(.text)
-                        .shadow(radius: 5, x: 1, y: 1)
-                    Image(systemName: "plus")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 20, height: 20)
-                        .foregroundStyle(.white)
+            
+            if viewModel.state.selectedTabTag != 3 {
+                Button {
+                    viewModel.trigger(.clickedToNavigate)
+                } label: {
+                    ZStack {
+                        Circle()
+                            .frame(width: 56, height: 56)
+                            .foregroundStyle(.text)
+                            .shadow(radius: 5, x: 1, y: 1)
+                        Image(systemName: "plus")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 20, height: 20)
+                            .foregroundStyle(.white)
+                    }
                 }
+                .position(
+                    x: screenSize.width - 50,
+                    y: screenSize.height - 180
+                )
             }
-            .position(
-                x: screenSize.width - 50,
-                y: screenSize.height - 180
-            )
         }
         .fullScreenCover(isPresented: $viewModel.state.navigateToMakeLetter) {
             NavigationView {
@@ -76,14 +79,6 @@ struct HomeView: View {
             NavigationView {
                 AddEventCategoryView()
             }
-        }
-    }
-}
-
-struct TempView: View {
-    var body: some View {
-        HStack {
-            
         }
     }
 }
