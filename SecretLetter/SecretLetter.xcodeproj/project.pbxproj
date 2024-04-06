@@ -29,6 +29,7 @@
 		7DD2C26B2BC120E700F1A646 /* MemberEventRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD2C26A2BC120E700F1A646 /* MemberEventRequest.swift */; };
 		7DD2C26E2BC128DB00F1A646 /* RectangleStrokeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD2C26D2BC128DB00F1A646 /* RectangleStrokeModifier.swift */; };
 		7DD2C2712BC15BDE00F1A646 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 7DD2C2702BC15BDE00F1A646 /* PopupView */; };
+		7DD2C2732BC1848A00F1A646 /* MakeLetterResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD2C2722BC1848A00F1A646 /* MakeLetterResultView.swift */; };
 		7DFE3BBF2BC108B100BD52C9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7DFE3BBE2BC108B100BD52C9 /* Alamofire */; };
 		AD6E732C2BC1149000CF7AAC /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E732B2BC1149000CF7AAC /* ViewModel.swift */; };
 		AD6E732E2BC1200100CF7AAC /* AuthorizationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E732D2BC1200100CF7AAC /* AuthorizationRequest.swift */; };
@@ -77,6 +78,7 @@
 		7DD2C2682BC11E0700F1A646 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		7DD2C26A2BC120E700F1A646 /* MemberEventRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberEventRequest.swift; sourceTree = "<group>"; };
 		7DD2C26D2BC128DB00F1A646 /* RectangleStrokeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleStrokeModifier.swift; sourceTree = "<group>"; };
+		7DD2C2722BC1848A00F1A646 /* MakeLetterResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeLetterResultView.swift; sourceTree = "<group>"; };
 		AD6E732B2BC1149000CF7AAC /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		AD6E732D2BC1200100CF7AAC /* AuthorizationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRequest.swift; sourceTree = "<group>"; };
 		AD6E732F2BC1261200CF7AAC /* SecretLetter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SecretLetter.entitlements; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				7D4BB3C52BC0EFB1000AF299 /* MakeLetterView.swift */,
 				7D4BB3CF2BC0F07A000AF299 /* MakeLetterViewModel.swift */,
+				7DD2C2722BC1848A00F1A646 /* MakeLetterResultView.swift */,
 			);
 			path = MakeLetter;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				7DD2C2622BC119B900F1A646 /* MessageResponse.swift in Sources */,
 				7DD2C2692BC11E0700F1A646 /* DateHelper.swift in Sources */,
 				ADB6C29D2BC13A0200B33106 /* AuthenticationResponse.swift in Sources */,
+				7DD2C2732BC1848A00F1A646 /* MakeLetterResultView.swift in Sources */,
 				7D4BB3C62BC0EFB1000AF299 /* MakeLetterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
