@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D1737142BC1BE6D00E10580 /* MakeLetterCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1737132BC1BE6D00E10580 /* MakeLetterCategoryView.swift */; };
+		7D1737162BC1BE7A00E10580 /* MakeLetterCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1737152BC1BE7A00E10580 /* MakeLetterCategoryViewModel.swift */; };
 		7D4BB3B02BC0E56D000AF299 /* SecretLetterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4BB3AF2BC0E56D000AF299 /* SecretLetterApp.swift */; };
 		7D4BB3B22BC0E56D000AF299 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4BB3B12BC0E56D000AF299 /* AuthenticationView.swift */; };
 		7D4BB3B42BC0E570000AF299 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D4BB3B32BC0E570000AF299 /* Assets.xcassets */; };
@@ -63,6 +65,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7D1737132BC1BE6D00E10580 /* MakeLetterCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeLetterCategoryView.swift; sourceTree = "<group>"; };
+		7D1737152BC1BE7A00E10580 /* MakeLetterCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeLetterCategoryViewModel.swift; sourceTree = "<group>"; };
 		7D4BB3AC2BC0E56D000AF299 /* SecretLetter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecretLetter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4BB3AF2BC0E56D000AF299 /* SecretLetterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretLetterApp.swift; sourceTree = "<group>"; };
 		7D4BB3B12BC0E56D000AF299 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
@@ -118,6 +122,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D1737112BC1BE4F00E10580 /* MakeLetterResult */ = {
+			isa = PBXGroup;
+			children = (
+				7DD2C2722BC1848A00F1A646 /* MakeLetterResultView.swift */,
+			);
+			path = MakeLetterResult;
+			sourceTree = "<group>";
+		};
+		7D1737122BC1BE5900E10580 /* MakeLetter */ = {
+			isa = PBXGroup;
+			children = (
+				7D4BB3C52BC0EFB1000AF299 /* MakeLetterView.swift */,
+				7D4BB3CF2BC0F07A000AF299 /* MakeLetterViewModel.swift */,
+			);
+			path = MakeLetter;
+			sourceTree = "<group>";
+		};
+		7D1737172BC1BE7E00E10580 /* MakeLetterCategory */ = {
+			isa = PBXGroup;
+			children = (
+				7D1737132BC1BE6D00E10580 /* MakeLetterCategoryView.swift */,
+				7D1737152BC1BE7A00E10580 /* MakeLetterCategoryViewModel.swift */,
+			);
+			path = MakeLetterCategory;
+			sourceTree = "<group>";
+		};
 		7D4BB3A32BC0E56D000AF299 = {
 			isa = PBXGroup;
 			children = (
@@ -200,9 +230,9 @@
 		7D4BB3C92BC0EFEE000AF299 /* MakeLetter */ = {
 			isa = PBXGroup;
 			children = (
-				7D4BB3C52BC0EFB1000AF299 /* MakeLetterView.swift */,
-				7D4BB3CF2BC0F07A000AF299 /* MakeLetterViewModel.swift */,
-				7DD2C2722BC1848A00F1A646 /* MakeLetterResultView.swift */,
+				7D1737172BC1BE7E00E10580 /* MakeLetterCategory */,
+				7D1737122BC1BE5900E10580 /* MakeLetter */,
+				7D1737112BC1BE4F00E10580 /* MakeLetterResult */,
 			);
 			path = MakeLetter;
 			sourceTree = "<group>";
@@ -443,7 +473,9 @@
 				7DD2C2622BC119B900F1A646 /* MessageResponse.swift in Sources */,
 				7DD2C28A2BC1B60300F1A646 /* ProfileViewModel.swift in Sources */,
 				7DD2C2692BC11E0700F1A646 /* DateHelper.swift in Sources */,
+				7D1737162BC1BE7A00E10580 /* MakeLetterCategoryViewModel.swift in Sources */,
 				ADB6C29D2BC13A0200B33106 /* AuthenticationResponse.swift in Sources */,
+				7D1737142BC1BE6D00E10580 /* MakeLetterCategoryView.swift in Sources */,
 				7DD2C2732BC1848A00F1A646 /* MakeLetterResultView.swift in Sources */,
 				ADB6C2AA2BC1A46800B33106 /* SingleLetterView.swift in Sources */,
 				7D4BB3C62BC0EFB1000AF299 /* MakeLetterView.swift in Sources */,
