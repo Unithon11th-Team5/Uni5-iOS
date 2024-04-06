@@ -13,7 +13,7 @@ enum EventType: String, CaseIterable, Identifiable {
     case chooseock = "THANKSGIVING"
     case christmas = "CHRISTMAS"
     case nonEvent = "NON_EVENT"
-    case marrige = "MARRIGE"
+    case marrige = "MARRIAGE"
     
     var id: String {
         self.rawValue

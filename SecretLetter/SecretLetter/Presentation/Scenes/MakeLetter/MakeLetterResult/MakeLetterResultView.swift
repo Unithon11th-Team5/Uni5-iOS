@@ -10,6 +10,8 @@ import SwiftUI
 
 struct MakeLetterResultView: View {
     
+    let letterInfo: MakeLetterState
+    
     var body: some View {
         
         ZStack {
@@ -27,6 +29,7 @@ struct MakeLetterResultView: View {
                     .frame(height: 91)
                     .overlay(alignment: .center) {
                         Text("메세지 전송 완료!")
+                            .font(.title)
                             .bold()
                     }
                 
@@ -36,15 +39,36 @@ struct MakeLetterResultView: View {
                 
                 Spacer()
                 
-                // 편지 내용 뷰 - 대체 예정
-                Rectangle()
-                    .fill(.accent)
-                    .frame(width: 300, height: 200)
+                LetterGridView(
+                    multiply: 2.0,
+                    backgroundColor: .accent,
+                    letter: Letter(
+                        id: "",
+                        senderName: letterInfo.senderName,
+                        content: letterInfo.messageContent,
+                        sentAt: letterInfo.receiverName,
+                        type: letterInfo.eventType.korean
+                    ),
+                    receiverName: letterInfo.receiverName
+                )
+                .frame(width: UIScreen.main.bounds.width - 100)
+                .overlay(alignment: .topLeading) {
+                    Image(.glasshour)
+                        .resizable()
+                        .frame(width: 36 * 2, height: 50 * 2)
+                        .offset(x: -30, y: -30)
+                }
+                .overlay(alignment: .bottomTrailing) {
+                    Image(.glasshour)
+                        .resizable()
+                        .frame(width: 36 * 2, height: 50 * 2)
+                        .offset(x: 30, y: 30)
+                }
                 
                 Spacer()
                 
                 Button(action: {
-                    self.goToHome()
+                    UIApplication.shared.windows.first?.rootViewController?.dismiss(animated: true)
                 }, label: {
                     RoundedRectangle(cornerRadius: 12)
                         .stroke(.black, lineWidth: 1)
@@ -62,12 +86,14 @@ struct MakeLetterResultView: View {
     }
 }
 
-extension MakeLetterResultView {
-    private func goToHome() {
-        // TODO: 홈 화면 이동
-    }
-}
-
 #Preview {
-    MakeLetterResultView()
+    MakeLetterResultView(letterInfo: 
+        MakeLetterState(
+            senderName: "ddd",
+            arrivalDate: Date(),
+            messageContent: "퇴근마렵다",
+            receiverName: "모카우유",
+            eventType: .nonEvent
+        )
+    )
 }
