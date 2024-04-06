@@ -81,8 +81,13 @@ extension MakeLetterView {
             Button(action: {
                 viewModel.isShowCalanderPopup.toggle()
             }, label: {
-                Image(systemName: "calendar")
-                    .foregroundStyle(.black)
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(.accent)
+                    .frame(width: 32, height: 32)
+                    .overlay(alignment: .center) {
+                        Image(systemName: "calendar")
+                            .foregroundStyle(.black)
+                    }
             })
         }
     }

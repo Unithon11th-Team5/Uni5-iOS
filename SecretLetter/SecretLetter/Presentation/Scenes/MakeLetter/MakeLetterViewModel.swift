@@ -79,7 +79,7 @@ extension MakeLetterViewModel {
             receiverNickname: state.receiverName,
             senderName: state.senderName,
             content: state.messageContent,
-            type: "",
+            type: "",   // TODO: 바꿔야됨
             sendPlannedAtDate: state.arrivalDate
         )
         

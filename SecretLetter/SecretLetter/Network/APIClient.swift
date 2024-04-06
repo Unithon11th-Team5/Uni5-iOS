@@ -54,12 +54,13 @@ extension APIClient {
     func sendMessage(message: SendMessageRequest) {
         
         let token = "jwt"
-        let param = message.toDictionary()
+        let param = message
         
         AF.request(
             url("messages/send"),
             method: .post,
             parameters: param,
+            encoder: JSONParameterEncoder.default,
             headers: ["Content-Type": "application/json", "Authorization": "Bearer \(token)"]
         ).responseJSON { response in
             switch response.result {
