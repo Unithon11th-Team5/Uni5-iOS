@@ -10,7 +10,7 @@ import Alamofire
 
 class APIClient {
     
-    private let baseURL: String = "http://3.35.112.110/"
+    private let baseURL: String = "https://secret-message.kro.kr/"
     
     private func url(_ path: String) -> String {
         return "\(self.baseURL)\(path)"
@@ -54,12 +54,13 @@ extension APIClient {
     func sendMessage(message: SendMessageRequest) {
         
         let token = "jwt"
-        let param = message.toDictionary()
+        let param = message
         
         AF.request(
             url("messages/send"),
             method: .post,
             parameters: param,
+            encoder: JSONParameterEncoder.default,
             headers: ["Content-Type": "application/json", "Authorization": "Bearer \(token)"]
         ).responseJSON { response in
             switch response.result {
