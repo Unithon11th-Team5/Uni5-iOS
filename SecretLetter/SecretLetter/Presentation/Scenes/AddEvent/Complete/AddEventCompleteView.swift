@@ -56,7 +56,7 @@ struct AddEventCompleteView: View {
                     })
                     
                     Button(action: {
-                        // TODO: 홈 화면으로
+                        UIApplication.shared.windows.first?.rootViewController?.dismiss(animated: true)
                     }, label: {
                         Text("완료")
                             .foregroundStyle(.black)

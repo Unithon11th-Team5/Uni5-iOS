@@ -53,11 +53,13 @@ struct HomeView: View {
                 y: screenSize.height - 180
             )
         }
-        .popup(isPresented: $viewModel.state.navigateToMakeLetter) {
-            
+        .fullScreenCover(isPresented: $viewModel.state.navigateToMakeLetter) {
+            MakeLetterCategoryView()
         }
-        .popup(isPresented: $viewModel.state.navigateToProfile) {
-            
+        .fullScreenCover(isPresented: $viewModel.state.navigateToProfile) {
+            NavigationView {
+                AddEventCategoryView()
+            }
         }
     }
 }

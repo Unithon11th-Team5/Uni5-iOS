@@ -16,7 +16,7 @@ enum MakeLetterCategoryInput {
 }
 
 class MakeLetterCategoryViewModel: ViewModel {
-    @Published var state: MakeLetterCategoryState
+    @Published var state = MakeLetterCategoryState()
     
     init(state: MakeLetterCategoryState = MakeLetterCategoryState()) {
         self.state = state
