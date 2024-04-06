@@ -32,14 +32,15 @@ class AuthenticationViewModel: ViewModel {
     }
     
     private func signInWithApple(credential: ASAuthorizationAppleIDCredential) {
-        guard let email = credential.email else { return }
-        guard let token = credential.identityToken else { return }
-        guard let tokenString = String(data: token, encoding: .utf8) else { return }
-        let param = AuthorizationRequest(
-            email: email,
-            token: tokenString
-        )
-        APIClient().appleSignIn(param)
+        if let email = credential.email {
+            guard let token = credential.identityToken else { return }
+            guard let tokenString = String(data: token, encoding: .utf8) else { return }
+            let param = AuthorizationRequest(
+                email: email,
+                token: tokenString
+            )
+            APIClient().appleSignIn(param)
+        }
     }
     
     private func createNonce() {

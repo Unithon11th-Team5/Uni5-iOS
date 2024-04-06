@@ -10,14 +10,18 @@ import Foundation
 /*
  {
      "email": "0217dayun@naver.com",
-     "fullName": "Dayeon Moon",
-     "content": "보낼 메시지",
      "token": "apple id token",
-     "authroizationCode": "authorization code"
  }
  */
 
-struct AuthorizationRequest: Codable, DictionaryConvertor {
+struct AuthorizationRequest: Codable {
     let email: String
     let token: String
+    
+    func toDictionary() -> [String: Any] {
+        [
+            "email": email,
+            "token": token
+        ]
+    }
 }

@@ -9,13 +9,14 @@ import Foundation
 import SwiftUI
 
 struct RectangleStrokeModifier: ViewModifier {
+    
+    var selectedColor = Color.white
       
     func body(content: Content) -> some View {
-        
         content
             .padding(EdgeInsets(top: 10, leading: 30, bottom: 10, trailing: 30))
             .background {
-                Color.white
+                selectedColor
                     .clipShape(RoundedRectangle(cornerRadius: 15))
                     .background {
                         RoundedRectangle(cornerRadius: 15)
