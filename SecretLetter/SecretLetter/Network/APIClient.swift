@@ -132,6 +132,8 @@ extension APIClient {
     /// 이벤트 추가
     func addEvent(content: String, type: EventType, date: Date) {
         
+        guard let jwtToken = jwtToken else { return }
+        let token = jwtToken
         let param = AddEventRequest(content: content, type: type.id, date: date)
         
         AF.request(
@@ -139,7 +141,7 @@ extension APIClient {
             method: .post,
             parameters: param,
             encoder: JSONParameterEncoder.default,
-            headers: ["Content-Type": "application/json"]
+            headers: ["Content-Type": "application/json", "Authorization": "Bearer \(token)"]
         ).responseJSON { response in
             switch response.result {
             case .success(let data): break
