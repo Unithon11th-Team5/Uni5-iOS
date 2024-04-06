@@ -66,9 +66,10 @@
 		7DD2C2632BC11C0600F1A646 /* DictionaryConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryConverter.swift; sourceTree = "<group>"; };
 		7DD2C2652BC11D4300F1A646 /* AddEventRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventRequest.swift; sourceTree = "<group>"; };
 		7DD2C2682BC11E0700F1A646 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		7DD2C26A2BC120E700F1A646 /* MemberEventRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberEventRequest.swift; sourceTree = "<group>"; };
 		AD6E732B2BC1149000CF7AAC /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		AD6E732D2BC1200100CF7AAC /* AuthorizationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRequest.swift; sourceTree = "<group>"; };
-		7DD2C26A2BC120E700F1A646 /* MemberEventRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberEventRequest.swift; sourceTree = "<group>"; };
+		AD6E732F2BC1261200CF7AAC /* SecretLetter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SecretLetter.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +103,7 @@
 		7D4BB3AE2BC0E56D000AF299 /* SecretLetter */ = {
 			isa = PBXGroup;
 			children = (
+				AD6E732F2BC1261200CF7AAC /* SecretLetter.entitlements */,
 				7D4BB3AF2BC0E56D000AF299 /* SecretLetterApp.swift */,
 				7DD2C2572BC10BD500F1A646 /* Network */,
 				7D4BB3BD2BC0EF23000AF299 /* Presentation */,
@@ -453,10 +455,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SecretLetter/SecretLetter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SecretLetter/Preview Content\"";
-				DEVELOPMENT_TEAM = ZW6466CHF4;
+				DEVELOPMENT_TEAM = 7D5PZJWQ9T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Secret Letter";
@@ -485,10 +488,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SecretLetter/SecretLetter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SecretLetter/Preview Content\"";
-				DEVELOPMENT_TEAM = ZW6466CHF4;
+				DEVELOPMENT_TEAM = 7D5PZJWQ9T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Secret Letter";
