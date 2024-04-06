@@ -66,6 +66,8 @@ struct ProfileView: View {
                     .frame(height: 60)
                     .padding(.horizontal, 24)
                 }
+                .contentMargins(.bottom, 100, for: .scrollContent)
+                
                 Spacer()
             }
         }
