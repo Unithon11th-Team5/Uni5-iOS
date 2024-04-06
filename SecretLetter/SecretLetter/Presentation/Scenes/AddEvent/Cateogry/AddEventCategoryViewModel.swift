@@ -16,7 +16,7 @@ enum AddEventCategoryInput {
 }
 
 class AddEventCategoryViewModel: ViewModel {
-    @Published var state: AddEventCategoryState
+    @Published var state = AddEventCategoryState()
     
     init(state: AddEventCategoryState = AddEventCategoryState()) {
         self.state = state

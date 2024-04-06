@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddEventCategoryView: View {
     
-    @StateObject var viewModel: AddEventCategoryViewModel
+    @StateObject var viewModel = AddEventCategoryViewModel()
     
     private var eventSelected: Bool {
         viewModel.state.selectedEvent != nil
@@ -24,7 +24,7 @@ struct AddEventCategoryView: View {
     
     var body: some View {
         VStack {
-            Text(eventSelected ? "원하는 이벤트를\n선택해 주세요." : "시크릿 메세지,\n왜 쓰러 오셨죠?")
+            Text(eventSelected ? "원하는 이벤트를\n선택해 주세요." : "유니레터,\n왜 쓰러 오셨나요?")
                 .font(.system(size: 24, weight: .bold))
                 .padding(.top, 50)
             Spacer()

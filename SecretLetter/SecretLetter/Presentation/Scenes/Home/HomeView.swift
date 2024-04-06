@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import PopupView
 
 /// 홈 화면
 struct HomeView: View {
     let screenSize = UIScreen.main.bounds.size
+    @StateObject var viewModel = HomeViewModel()
+    
     var body: some View {
         ZStack {
-            TabView {
+            TabView(selection: $viewModel.state.selectedTabTag) {
                 ReceivedLetterView()
                     .tabItem {
                         Image(.bubble)
@@ -20,6 +23,7 @@ struct HomeView: View {
                             .foregroundStyle(Color.text)
                             .accentColor(.text)
                     }
+                    .tag(1)
                 ProfileView()
                     .tabItem {
                         Image(systemName: "person.fill")
@@ -27,9 +31,10 @@ struct HomeView: View {
                             .foregroundStyle(Color.text)
                             .accentColor(.text)
                     }
+                    .tag(2)
             }
             Button {
-                
+                viewModel.trigger(.clickedToNavigate)
             } label: {
                 ZStack {
                     Circle()
@@ -47,6 +52,12 @@ struct HomeView: View {
                 x: screenSize.width - 50,
                 y: screenSize.height - 180
             )
+        }
+        .popup(isPresented: $viewModel.state.navigateToMakeLetter) {
+            
+        }
+        .popup(isPresented: $viewModel.state.navigateToProfile) {
+            
         }
     }
 }
