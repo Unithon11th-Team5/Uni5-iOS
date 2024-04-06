@@ -23,4 +23,12 @@ struct SendMessageRequest: Codable, DictionaryConvertor {
     let content: String
     let type: String
     let sendPlannedAt: String
+    
+    init(receiverNickname: String, senderName: String, content: String, type: String, sendPlannedAtDate: Date) {
+        self.receiverNickname = receiverNickname
+        self.senderName = senderName
+        self.content = content
+        self.type = type
+        self.sendPlannedAt = DateHelper.shared.dateToString(date: sendPlannedAtDate)
+    }
 }

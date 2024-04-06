@@ -52,6 +52,7 @@ extension APIClient {
         AF.request(
             url("messages/send"),
             method: .post,
+            parameters: param,
             headers: ["Content-Type": "application/json", "Authorization": "Bearer \(token)"]
         ).responseJSON { response in
             switch response.result {
@@ -68,7 +69,7 @@ extension APIClient {
         
         AF.request(
             url("messages/unread"),
-            method: .post,
+            method: .get,
             headers: ["Authorization": "Bearer \(token)"]
         ).responseJSON { response in
             switch response.result {
@@ -97,12 +98,31 @@ extension APIClient {
 
 // MARK: 이벤트
 extension APIClient {
+    
+    /// 이벤트 추가
     func addEvent(content: String, date: Date) {
+        
+        let param = AddEventRequest(content: content, date: date).toDictionary()
         
         AF.request(
             url("events"),
             method: .get,
+            parameters: param,
             headers: ["Content-Type": "application/json"]
+        ).responseJSON { response in
+            switch response.result {
+            case .success(let data): break
+            case .failure(let error): break
+            }
+        }
+    }
+    
+    
+    /// 특정 멤버의 이벤트
+    func event(memberId: String) {
+        AF.request(
+            url("events?memberId=\(memberId)"),
+            method: .get
         ).responseJSON { response in
             switch response.result {
             case .success(let data): break
