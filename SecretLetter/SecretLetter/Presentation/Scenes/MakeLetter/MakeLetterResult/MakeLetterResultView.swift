@@ -27,6 +27,7 @@ struct MakeLetterResultView: View {
                     .frame(height: 91)
                     .overlay(alignment: .center) {
                         Text("메세지 전송 완료!")
+                            .font(.title)
                             .bold()
                     }
                 
