@@ -16,7 +16,7 @@ struct AddEventDetailView: View {
         ZStack {
             
             NavigationLink(
-                destination: AddEventCompleteView(viewModel: AddEventCompleteViewModel(state: AddEventCompleteState())),
+                destination: AddEventCompleteView(),
                 tag: true,
                 selection: $viewModel.navigationAction) {
                 EmptyView()
