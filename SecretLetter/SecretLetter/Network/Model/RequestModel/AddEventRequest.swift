@@ -18,7 +18,8 @@ struct AddEventRequest: Codable, DictionaryConvertor {
     let content: String
     let plannedAt: String
     
-//    init(content: String, date: Date) {
-//        
-//    }
+    init(content: String, date: Date) {
+        self.content = content
+        self.plannedAt = DateHelper.shared.dateToString(date: date)
+    }
 }
