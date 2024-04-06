@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Letter: Codable, Identifiable {
+struct Letter: Codable, Identifiable, Hashable {
     let id: String
     let senderName: String
     let content: String
