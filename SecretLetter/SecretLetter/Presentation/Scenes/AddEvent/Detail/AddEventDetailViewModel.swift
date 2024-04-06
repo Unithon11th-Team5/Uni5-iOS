@@ -27,6 +27,7 @@ class AddEventDetailViewModel: ViewModel {
     }
     @Published var isNextButtonActive: Bool = false
     @Published var isShowCalendarPopup: Bool = false
+    @Published var navigationAction: Bool? = false
     
     init(type: EventType) {
         self.state = AddEventDetailState(eventType: type)
@@ -38,6 +39,7 @@ class AddEventDetailViewModel: ViewModel {
             self.changeNextButtonValidation()
         case .nextButtonTapped:
             self.requestAddEvent()
+            self.navigationAction = true
         }
     }
     

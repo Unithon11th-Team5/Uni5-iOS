@@ -8,12 +8,12 @@
 import Foundation
 
 enum EventType: String, CaseIterable, Identifiable {
-    case cheerUp
-    case birthday
-    case chooseock
-    case christmas
-    case nonEvent
-    case etc
+    case cheerUp = "CHEER_UP"
+    case birthday = "BIRTHDAY"
+    case chooseock = "THANKSGIVING"
+    case christmas = "CHRISTMAS"
+    case nonEvent = "NON_EVENT"
+    case marrige = "MARRIGE"
     
     var id: String {
         self.rawValue
@@ -26,13 +26,14 @@ enum EventType: String, CaseIterable, Identifiable {
         case .birthday:
             "생일"
         case .chooseock:
-            "추석"
+            "명절"
         case .christmas:
-            "크리스마스"
+            "연말"
         case .nonEvent:
             "일상"
-        case .etc:
-            "기타"
+        case .marrige:
+            "결혼"
         }
     }
 }
+

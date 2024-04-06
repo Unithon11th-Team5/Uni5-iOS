@@ -10,9 +10,18 @@ import SwiftUI
 struct AddEventDetailView: View {
     
     @StateObject var viewModel: AddEventDetailViewModel
+    @State private var navigationAction: Bool? = false
     
     var body: some View {
         ZStack {
+            
+            NavigationLink(
+                destination: AddEventCompleteView(viewModel: AddEventCompleteViewModel(state: AddEventCompleteState())),
+                tag: true,
+                selection: $viewModel.navigationAction) {
+                EmptyView()
+            }
+            
             Image(.defaultBackground)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
