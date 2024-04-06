@@ -129,15 +129,14 @@ iOSInjectionProject/
 ### SwiftPackageManager ###
 Packages
 xcuserdata
-*.xcodeproj
-
+SecretLetter/SecretLetter.xcodeproj/project.xcworkspace
 
 ### Xcode ###
 
 ## Xcode 8 and earlier
 
 ### Xcode Patch ###
-*.xcodeproj/*
+
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
 !*.xcodeproj/project.xcworkspace/
