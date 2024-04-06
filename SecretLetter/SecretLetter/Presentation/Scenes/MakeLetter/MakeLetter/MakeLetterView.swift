@@ -51,7 +51,7 @@ struct MakeLetterView: View {
                 })
                 .accentColor(.text)
                 
-                Spacer().frame(height: 8)
+                Spacer().frame(height: 10)
             }
         }
         
@@ -85,7 +85,7 @@ extension MakeLetterView {
             isToMeView
         }
         .padding(.vertical)
-        .frame(width: 300, height: 400)
+        .frame(width: UIScreen.main.bounds.width - 100, height: 350)
         .modifier(RectangleStrokeModifier())
     }
     
