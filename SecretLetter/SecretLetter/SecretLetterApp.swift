@@ -11,7 +11,7 @@ import SwiftUI
 struct SecretLetterApp: App {
     var body: some Scene {
         WindowGroup {
-            MakeLetterView(viewModel: MakeLetterViewModel(senderName: "Unithon"))
+            SplashView()
         }
     }
 }
