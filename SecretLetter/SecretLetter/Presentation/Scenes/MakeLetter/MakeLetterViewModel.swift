@@ -21,6 +21,8 @@ enum MakeLetterInput {
     case invoiceDataChanged
     /// 전송 버튼 선택
     case sendButtonTapped
+    /// 팝업 확인 버튼 선택
+    case lastPopupConfirm
 }
 
 
@@ -33,6 +35,7 @@ class MakeLetterViewModel: ViewModel {
     }
     @Published var isButtonActivated: Bool = false
     @Published var isShowCalanderPopup: Bool = false
+    @Published var isShowLastCheckPopup: Bool = false
     
     let api = APIClient()
     
@@ -48,8 +51,12 @@ class MakeLetterViewModel: ViewModel {
             
         // Button Tap
         case .sendButtonTapped:
+            self.isShowLastCheckPopup = true
+        case .lastPopupConfirm:
             self.postNewMessage()
+            // TODO: Dismiss action required
         }
+        
     }
    
 }
