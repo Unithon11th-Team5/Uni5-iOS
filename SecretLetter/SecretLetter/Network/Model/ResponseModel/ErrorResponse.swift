@@ -14,7 +14,7 @@ import Foundation
  }
  */
 
-struct ErrorResponse {
+struct ErrorResponse: Codable {
     let code: String
     let message: String
 }

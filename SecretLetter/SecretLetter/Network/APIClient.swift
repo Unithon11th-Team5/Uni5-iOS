@@ -27,21 +27,16 @@ extension APIClient {
         AF.request(
             requestUrl,
             method: .post,
-            parameters: param.toDictionary(),
+            parameters: param,
+            encoder: JSONParameterEncoder.default,
             headers: ["Content-Type": "application/json"]
-        ).responseJSON { response in
+        ).responseDecodable(of: AuthenticationResponse.self) { response in
+            let jsonString = String(data: response.data!, encoding: .utf8)
             switch response.result {
-            case .success(let data):
-                do {
-                    let decoder = JSONDecoder()
-                    let json = try decoder.decode(AuthenticationResponse.self, from: data as! Data)
-                    UserDefaults.standard.setValue("jwtToken", forKey: json.token)
-                    print("=== DEBUG: \(json.token)")
-                } catch {
-                    print("error \(error)")
-                }
+            case .success(let json):
+                UserDefaults.standard.setValue(json.token, forKey: "jwtToken")
             case .failure(let error):
-                print("Fail \(error)")
+                print("Failed \(error)")
             }
         }
     }
