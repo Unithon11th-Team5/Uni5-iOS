@@ -45,7 +45,7 @@ struct ProfileView: View {
                         Rectangle()
                             .foregroundStyle(.white)
                             .modifier(RectangleStrokeModifier())
-                        HStack(spacing: 4) {
+                        HStack(spacing: 8) {
                             Text(event.type)
                                 .font(.system(size: 10, weight: .bold))
                                 .foregroundStyle(.black)
@@ -63,9 +63,11 @@ struct ProfileView: View {
                                 .foregroundStyle(Color.black)
                         }
                         .padding(.horizontal, 24)
+                        .padding(.vertical, 8)
                     }
                     .frame(height: 60)
                     .padding(.horizontal, 24)
+                    .padding(.vertical, 8)
                 }
                 .contentMargins(.bottom, 100, for: .scrollContent)
                 
