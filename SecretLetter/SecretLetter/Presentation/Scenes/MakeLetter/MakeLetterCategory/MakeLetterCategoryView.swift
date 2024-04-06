@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MakeLetterCategoryView: View {
     
-    @StateObject var viewModel: MakeLetterCategoryViewModel
+    @StateObject var viewModel = MakeLetterCategoryViewModel()
     
     private var eventSelected: Bool {
         viewModel.state.selectedEvent != nil
@@ -24,7 +24,7 @@ struct MakeLetterCategoryView: View {
     
     var body: some View {
         VStack {
-            Text("원하는 이벤트를\n선택해 주세요.")
+            Text(eventSelected ? "원하는 이벤트를\n선택해 주세요." : "유니레터,\n왜 쓰러 오셨나요?")
                 .font(.system(size: 24, weight: .bold))
                 .padding(.top, 50)
             Spacer()
@@ -55,7 +55,14 @@ struct MakeLetterCategoryView: View {
             .padding(.horizontal, 48)
             Spacer(minLength: 130)
             NavigationLink {
-//                AddEventDetailView(viewModel: AddEventDetailViewModel(type: selectedEvent ?? EventType.cheerUp))
+                if let username = UserDefaults.standard.string(forKey: "name") {
+                    MakeLetterView(
+                        viewModel: MakeLetterViewModel(
+                            userName: username, 
+                            eventType: selectedEvent!.rawValue
+                        )
+                    )
+                }
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 10)

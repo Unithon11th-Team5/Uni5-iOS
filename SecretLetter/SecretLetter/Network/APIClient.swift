@@ -36,6 +36,8 @@ extension APIClient {
                 switch response.result {
                 case .success(let json):
                     UserDefaults.standard.setValue(json.token, forKey: "jwtToken")
+                    UserDefaults.standard.setValue(param.name, forKey: "name")
+                    UserDefaults.standard.setValue(param.email, forKey: "email")
                     continuation.resume(returning: true)
                 case .failure(let error):
                     print("Failed \(error)")
