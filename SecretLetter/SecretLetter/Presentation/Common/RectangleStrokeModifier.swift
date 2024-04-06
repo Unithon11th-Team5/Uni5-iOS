@@ -14,7 +14,7 @@ struct RectangleStrokeModifier: ViewModifier {
       
     func body(content: Content) -> some View {
         content
-            .padding(EdgeInsets(top: 10, leading: 30, bottom: 10, trailing: 30))
+            .padding(15)
             .background {
                 selectedColor
                     .clipShape(RoundedRectangle(cornerRadius: 15))

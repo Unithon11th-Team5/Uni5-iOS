@@ -24,12 +24,11 @@ struct SearchFieldView: View {
                     .modifier(RectangleStrokeModifier())
                 
                 NavigationLink(destination: {
-                    Text(keyword)
+                    SearchResultView(viewModel: SearchResultViewModel(nickname: keyword))
                 }, label: {
                     Image(systemName: "magnifyingglass")
                         .foregroundColor(.black)
                         .modifier(RectangleStrokeModifier())
-
                 })
             }
             .frame(width: UIScreen.main.bounds.width - 100, height: 50)
