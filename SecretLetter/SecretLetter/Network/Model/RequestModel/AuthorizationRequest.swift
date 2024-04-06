@@ -17,11 +17,4 @@ import Foundation
 struct AuthorizationRequest: Codable {
     let email: String
     let token: String
-    
-    func toDictionary() -> [String: Any] {
-        [
-            "email": email,
-            "token": token
-        ]
-    }
 }
