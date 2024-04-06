@@ -86,7 +86,15 @@ extension MakeLetterView {
     }
     
     var invoiceView: some View {
-        HStack {
+        HStack(spacing: 8) {
+            
+            Text(viewModel.state.eventType.korean)
+                .font(.footnote)
+                .bold()
+                .padding(8)
+                .background(.accent)
+                .cornerRadius(12)
+
             HStack {
                 Text("From. ")
                 TextField("보내는 사람", text: $viewModel.state.senderName)
@@ -259,4 +267,11 @@ extension MakeLetterView {
                 .frame(width: 340, height: 203)
         )
     }
+}
+
+#Preview {
+    MakeLetterView(viewModel: MakeLetterViewModel(
+        userName: "Hoon",
+        eventType: .chooseock)
+    )
 }
