@@ -260,7 +260,3 @@ extension MakeLetterView {
         )
     }
 }
-
-#Preview {
-    MakeLetterView(viewModel: MakeLetterViewModel(userName: "보내는사람", eventType: "CHEER_UP"))
-}

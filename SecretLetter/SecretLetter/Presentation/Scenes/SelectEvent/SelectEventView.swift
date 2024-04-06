@@ -80,8 +80,8 @@ struct SelectEventView: View {
             }
             .padding(.horizontal, 48)
             Spacer(minLength: 130)
-            Button {
-                // TODO: - 네비게이션 구현
+            NavigationLink {
+                // TODO: - destination
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 10)
@@ -98,6 +98,7 @@ struct SelectEventView: View {
                 .padding(.horizontal, 24)
                 .padding(.bottom, 20)
             }
+            .disabled(!eventSelected)
         }
         .background(
             Image(.defaultBackground)

@@ -11,6 +11,7 @@ import Alamofire
 class APIClient {
     
     private let baseURL: String = "https://secret-message.kro.kr/"
+    private let jwtToken = UserDefaults.standard.string(forKey: "jwtToken")
     
     private func url(_ path: String) -> String {
         return "\(self.baseURL)\(path)"
@@ -31,7 +32,6 @@ extension APIClient {
             encoder: JSONParameterEncoder.default,
             headers: ["Content-Type": "application/json"]
         ).responseDecodable(of: AuthenticationResponse.self) { response in
-            let jsonString = String(data: response.data!, encoding: .utf8)
             switch response.result {
             case .success(let json):
                 UserDefaults.standard.setValue(json.token, forKey: "jwtToken")
@@ -47,8 +47,8 @@ extension APIClient {
     
     /// 메시지 전송
     func sendMessage(message: SendMessageRequest) {
-        
-        let token = "jwt"
+        guard let jwtToken = jwtToken else { return }
+        let token = jwtToken
         let param = message
         
         AF.request(
@@ -64,11 +64,31 @@ extension APIClient {
             }
         }
     }
+    
+    /// 전체 메시지 리스트 조회
+    func allReceivedMessage() async throws -> [Letter]? {
+        guard let jwtToken = jwtToken else { return nil }
+        let requestUrl = url("messages")
+        return try await withCheckedThrowingContinuation { continuation in
+            AF.request(
+                requestUrl,
+                method: .get,
+                headers: ["Content-Type": "application/json", "Authorization": "Bearer \(String(describing: jwtToken))"]
+            ).responseDecodable(of: ReceiveLettersResponse.self) { response in
+                switch response.result {
+                case .success(let json):
+                    continuation.resume(returning: json.messages)
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                }
+            }
+        }
+    }
 
     /// 읽지 않은 메시지 리스트 조회
     func unreadMessage() {
-        
-        let token = "jwt"
+        guard let jwtToken = jwtToken else { return }
+        let token = jwtToken
         
         AF.request(
             url("messages/unread"),
@@ -84,7 +104,8 @@ extension APIClient {
     
     /// 받은 단일 메시지 조회
     func singleMessage(id: String) {
-        let token = "jwt"
+        guard let jwtToken = jwtToken else { return }
+        let token = jwtToken
         
         AF.request(
             url("messages/\(id)"),
