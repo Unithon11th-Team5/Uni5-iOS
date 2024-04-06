@@ -32,6 +32,16 @@ struct HomeView: View {
                             .accentColor(.text)
                     }
                     .tag(2)
+                
+                SearchFieldView()
+                    .tabItem {
+                        Image(systemName: "magnifyingglass")
+                        Text("검색")
+                            .foregroundStyle(Color.text)
+                            .accentColor(.text)
+                    }
+                    .tag(3)
+
             }
             Button {
                 viewModel.trigger(.clickedToNavigate)
