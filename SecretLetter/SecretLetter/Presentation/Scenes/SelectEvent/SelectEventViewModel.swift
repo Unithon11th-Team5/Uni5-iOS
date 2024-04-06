@@ -13,7 +13,6 @@ struct SelectEventState {
 
 enum SelectEventInput {
     case selectEvent(EventType)
-    case pressNextButton
 }
 
 class SelectEventViewModel: ViewModel {
@@ -23,11 +22,6 @@ class SelectEventViewModel: ViewModel {
         switch input {
         case .selectEvent(let type):
             state.selectedEvent = type.rawValue
-        case .pressNextButton:
-            addEvent()
         }
-    }
-    
-    private func addEvent() {
     }
 }

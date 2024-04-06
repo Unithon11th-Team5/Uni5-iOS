@@ -192,7 +192,3 @@ extension MakeLetterView {
         )
     }
 }
-
-#Preview {
-    MakeLetterView(viewModel: MakeLetterViewModel(senderName: "보내는사람"))
-}
