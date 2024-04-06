@@ -124,14 +124,15 @@ extension APIClient {
 extension APIClient {
     
     /// 이벤트 추가
-    func addEvent(content: String, date: Date) {
+    func addEvent(content: String, type: EventType, date: Date) {
         
-        let param = AddEventRequest(content: content, date: date).toDictionary()
+        let param = AddEventRequest(content: content, type: type.id, date: date)
         
         AF.request(
             url("events"),
             method: .get,
             parameters: param,
+            encoder: JSONParameterEncoder.default,
             headers: ["Content-Type": "application/json"]
         ).responseJSON { response in
             switch response.result {

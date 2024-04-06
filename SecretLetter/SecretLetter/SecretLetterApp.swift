@@ -11,7 +11,10 @@ import SwiftUI
 struct SecretLetterApp: App {
     var body: some Scene {
         WindowGroup {
-            SplashView()
+//            SplashView()
+            NavigationView {
+                AddEventCategoryView(viewModel: AddEventCategoryViewModel(state: AddEventCategoryState()))
+            }
         }
     }
 }

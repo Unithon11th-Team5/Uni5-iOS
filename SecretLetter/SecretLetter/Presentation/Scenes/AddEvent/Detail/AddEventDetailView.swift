@@ -17,5 +17,5 @@ struct AddEventDetailView: View {
 }
 
 #Preview {
-    AddEventDetailView(viewModel: AddEventDetailViewModel(state: AddEventDetailState()))
+    AddEventDetailView(viewModel: AddEventDetailViewModel(type: .cheerUp))
 }
