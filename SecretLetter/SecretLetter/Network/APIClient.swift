@@ -130,7 +130,7 @@ extension APIClient {
         
         AF.request(
             url("events"),
-            method: .get,
+            method: .post,
             parameters: param,
             encoder: JSONParameterEncoder.default,
             headers: ["Content-Type": "application/json"]

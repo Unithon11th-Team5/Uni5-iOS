@@ -9,7 +9,7 @@ import Foundation
 
 struct AddEventDetailState {
     let eventType: EventType
-    var date: Date?
+    var date: Date = Date()
     var content: String = ""
 }
 
@@ -20,8 +20,13 @@ enum AddEventDetailInput {
 
 class AddEventDetailViewModel: ViewModel {
     
-    @Published var state: AddEventDetailState
+    @Published var state: AddEventDetailState {
+        didSet {
+            self.changeNextButtonValidation()
+        }
+    }
     @Published var isNextButtonActive: Bool = false
+    @Published var isShowCalendarPopup: Bool = false
     
     init(type: EventType) {
         self.state = AddEventDetailState(eventType: type)
@@ -40,7 +45,7 @@ class AddEventDetailViewModel: ViewModel {
 
 extension AddEventDetailViewModel {
     private func isNextButtonValid() -> Bool {
-        return state.date != nil && state.content.isEmpty == false
+        return state.content.isEmpty == false
     }
     
     private func changeNextButtonValidation() {
@@ -50,10 +55,7 @@ extension AddEventDetailViewModel {
 
 extension AddEventDetailViewModel {
     private func requestAddEvent() {
-        
-        guard let date = state.date else { return }
-        
         let api = APIClient()
-        api.addEvent(content: state.content, type: state.eventType, date: date)
+        api.addEvent(content: state.content, type: state.eventType, date: state.date)
     }
 }
