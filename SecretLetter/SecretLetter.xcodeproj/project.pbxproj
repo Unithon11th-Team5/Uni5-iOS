@@ -18,6 +18,8 @@
 		7D4BB3CE2BC0F02E000AF299 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4BB3CD2BC0F02E000AF299 /* HomeViewModel.swift */; };
 		7D4BB3D02BC0F07A000AF299 /* MakeLetterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4BB3CF2BC0F07A000AF299 /* MakeLetterViewModel.swift */; };
 		7D4BB3D22BC0F111000AF299 /* ReveivedLetterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4BB3D12BC0F111000AF299 /* ReveivedLetterViewModel.swift */; };
+		7DD2C2562BC1099500F1A646 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD2C2552BC1099500F1A646 /* APIClient.swift */; };
+		7DFE3BBF2BC108B100BD52C9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7DFE3BBE2BC108B100BD52C9 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +48,7 @@
 		7D4BB3CD2BC0F02E000AF299 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		7D4BB3CF2BC0F07A000AF299 /* MakeLetterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeLetterViewModel.swift; sourceTree = "<group>"; };
 		7D4BB3D12BC0F111000AF299 /* ReveivedLetterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReveivedLetterViewModel.swift; sourceTree = "<group>"; };
+		7DD2C2552BC1099500F1A646 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DFE3BBF2BC108B100BD52C9 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				7D4BB3AF2BC0E56D000AF299 /* SecretLetterApp.swift */,
+				7DD2C2572BC10BD500F1A646 /* Network */,
 				7D4BB3BD2BC0EF23000AF299 /* Presentation */,
 				7D4BB3B32BC0E570000AF299 /* Assets.xcassets */,
 				7D4BB3B52BC0E570000AF299 /* Preview Content */,
@@ -149,6 +154,14 @@
 			path = ReceivedLetter;
 			sourceTree = "<group>";
 		};
+		7DD2C2572BC10BD500F1A646 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7DD2C2552BC1099500F1A646 /* APIClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,6 +180,7 @@
 			);
 			name = SecretLetter;
 			packageProductDependencies = (
+				7DFE3BBE2BC108B100BD52C9 /* Alamofire */,
 			);
 			productName = SecretLetter;
 			productReference = 7D4BB3AC2BC0E56D000AF299 /* SecretLetter.app */;
@@ -197,6 +211,7 @@
 			);
 			mainGroup = 7D4BB3A32BC0E56D000AF299;
 			packageReferences = (
+				7DFE3BBD2BC108B100BD52C9 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 7D4BB3AD2BC0E56D000AF299 /* Products */;
 			projectDirPath = "";
@@ -230,6 +245,7 @@
 				7D4BB3B22BC0E56D000AF299 /* SplashView.swift in Sources */,
 				7D4BB3CB2BC0EFFC000AF299 /* ReceivedLetterViewView.swift in Sources */,
 				7D4BB3B02BC0E56D000AF299 /* SecretLetterApp.swift in Sources */,
+				7DD2C2562BC1099500F1A646 /* APIClient.swift in Sources */,
 				7D4BB3D02BC0F07A000AF299 /* MakeLetterViewModel.swift in Sources */,
 				7D4BB3D22BC0F111000AF299 /* ReveivedLetterViewModel.swift in Sources */,
 				7D4BB3C62BC0EFB1000AF299 /* MakeLetterView.swift in Sources */,
@@ -446,6 +462,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7DFE3BBD2BC108B100BD52C9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7DFE3BBE2BC108B100BD52C9 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7DFE3BBD2BC108B100BD52C9 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7D4BB3A42BC0E56D000AF299 /* Project object */;
 }
