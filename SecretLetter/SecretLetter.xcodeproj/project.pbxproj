@@ -28,6 +28,7 @@
 		7DD2C2692BC11E0700F1A646 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD2C2682BC11E0700F1A646 /* DateHelper.swift */; };
 		7DD2C26B2BC120E700F1A646 /* MemberEventRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD2C26A2BC120E700F1A646 /* MemberEventRequest.swift */; };
 		7DD2C26E2BC128DB00F1A646 /* RectangleStrokeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD2C26D2BC128DB00F1A646 /* RectangleStrokeModifier.swift */; };
+		7DD2C2712BC15BDE00F1A646 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 7DD2C2702BC15BDE00F1A646 /* PopupView */; };
 		7DFE3BBF2BC108B100BD52C9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7DFE3BBE2BC108B100BD52C9 /* Alamofire */; };
 		AD6E732C2BC1149000CF7AAC /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E732B2BC1149000CF7AAC /* ViewModel.swift */; };
 		AD6E732E2BC1200100CF7AAC /* AuthorizationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E732D2BC1200100CF7AAC /* AuthorizationRequest.swift */; };
@@ -89,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DD2C2712BC15BDE00F1A646 /* PopupView in Frameworks */,
 				7DFE3BBF2BC108B100BD52C9 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +289,7 @@
 			name = SecretLetter;
 			packageProductDependencies = (
 				7DFE3BBE2BC108B100BD52C9 /* Alamofire */,
+				7DD2C2702BC15BDE00F1A646 /* PopupView */,
 			);
 			productName = SecretLetter;
 			productReference = 7D4BB3AC2BC0E56D000AF299 /* SecretLetter.app */;
@@ -318,6 +321,7 @@
 			mainGroup = 7D4BB3A32BC0E56D000AF299;
 			packageReferences = (
 				7DFE3BBD2BC108B100BD52C9 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				7DD2C26F2BC15BDE00F1A646 /* XCRemoteSwiftPackageReference "PopupView" */,
 			);
 			productRefGroup = 7D4BB3AD2BC0E56D000AF299 /* Products */;
 			projectDirPath = "";
@@ -588,6 +592,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7DD2C26F2BC15BDE00F1A646 /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.1;
+			};
+		};
 		7DFE3BBD2BC108B100BD52C9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -599,6 +611,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7DD2C2702BC15BDE00F1A646 /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7DD2C26F2BC15BDE00F1A646 /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
+		};
 		7DFE3BBE2BC108B100BD52C9 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7DFE3BBD2BC108B100BD52C9 /* XCRemoteSwiftPackageReference "Alamofire" */;
