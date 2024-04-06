@@ -48,6 +48,8 @@ class MakeLetterViewModel: ViewModel {
     @Published var isShowCalanderPopup: Bool = false
     @Published var isShowLastCheckPopup: Bool = false
     
+    @Published var navigationAction: Bool? = false
+    
     let api = APIClient()
     
     init(userName: String, eventType: EventType) {
@@ -69,6 +71,7 @@ class MakeLetterViewModel: ViewModel {
             self.isShowLastCheckPopup = true
         case .lastPopupConfirm:
             self.postNewMessage()
+            self.navigationAction = true
         }
         
     }
