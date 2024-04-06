@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct SplashView: View {
-    
-    #warning("need fix - 옵저빙 안되는 것 같아서")
-    @State private var jwtToken = UserDefaults.standard.string(forKey: "jwtToken")
     var body: some View {
-        if let jwtToken = jwtToken {
-            HomeView()
-        } else { /* need sign in */
-            AuthenticationView()
+        NavigationView {
+            if let _ = UserDefaults.standard.string(forKey: "jwtToken") {
+                HomeView()
+            } else {
+                AuthenticationView()
+            }
         }
     }
 }

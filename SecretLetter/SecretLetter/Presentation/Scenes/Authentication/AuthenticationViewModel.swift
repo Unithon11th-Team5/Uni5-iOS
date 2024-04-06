@@ -12,6 +12,7 @@ import AuthenticationServices
 struct AuthenticationState {
     var enctyptedNonce: String?
     var isLoading = false
+    var successToSignIn = false
 }
 
 enum AuthenticationInput {
@@ -33,13 +34,22 @@ class AuthenticationViewModel: ViewModel {
     
     private func signInWithApple(credential: ASAuthorizationAppleIDCredential) {
         if let email = credential.email {
+            let name = credential.fullName?.givenName
             guard let token = credential.identityToken else { return }
             guard let tokenString = String(data: token, encoding: .utf8) else { return }
             let param = AuthorizationRequest(
                 email: email,
-                token: tokenString
+                token: tokenString,
+                name: name ?? ""
             )
-            APIClient().appleSignIn(param)
+            Task {
+                let completion = try await APIClient().appleSignIn(param)
+                if completion {
+                    await MainActor.run {
+                        state.successToSignIn = true
+                    }
+                }
+            }
         }
     }
     

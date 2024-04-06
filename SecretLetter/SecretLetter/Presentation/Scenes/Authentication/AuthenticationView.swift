@@ -13,14 +13,19 @@ struct AuthenticationView: View {
     @StateObject var viewModel = AuthenticationViewModel()
     var body: some View {
         ZStack {
+            NavigationLink(isActive: $viewModel.state.successToSignIn) {
+                    HomeView()
+                        .navigationBarBackButtonHidden()
+                } label: {
+                    EmptyView()
+                }
+
             Image(.splashBackground)
                 .resizable()
                 .scaledToFill()
                 .ignoresSafeArea()
-            
             VStack {
                 Spacer()
-                
                 SignInWithAppleButton { request in
                     request.requestedScopes = [.fullName, .email]
                     request.nonce = viewModel.state.enctyptedNonce
