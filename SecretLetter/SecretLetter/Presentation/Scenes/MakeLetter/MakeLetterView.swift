@@ -111,14 +111,14 @@ extension MakeLetterView {
         HStack {
             HStack {
                 Button(action: {
-                    self.viewModel.state.isToMyself.toggle()
+                    self.viewModel.isToMySelfChecked.toggle()
                 }, label: {
                     Circle()
-                        .stroke(viewModel.state.isToMyself ? .accent : .gray, lineWidth: 3)
-                        .fill(viewModel.state.isToMyself ? .accent : .white)
+                        .stroke(viewModel.isToMySelfChecked ? .accent : .gray, lineWidth: 3)
+                        .fill(viewModel.isToMySelfChecked ? .accent : .white)
                         .frame(width: 18, height: 18)
                         .overlay(alignment: .center) {
-                            if viewModel.state.isToMyself {
+                            if viewModel.isToMySelfChecked {
                                 Image(systemName: "checkmark")
                                     .resizable()
                                     .foregroundColor(.black)
@@ -129,7 +129,7 @@ extension MakeLetterView {
                 })
                 
                 Button(action: {
-                    self.viewModel.state.isToMyself.toggle()
+                    self.viewModel.isToMySelfChecked.toggle()
                 }, label: {
                     Text("나에게 쓰기")
                         .foregroundStyle(.text)
@@ -143,13 +143,14 @@ extension MakeLetterView {
     
     var receiverNameField: some View {
         TextField("받는사람 ID를 입력하세요", text: $viewModel.state.receiverName)
+            .disabled(!viewModel.isReceiverFieldActivated)
             .accentColor(.black)
             .multilineTextAlignment(.center)
             .padding()
             .background(
                 RoundedRectangle(cornerRadius: 12)
-                    .fill(.white)
-                    .modifier(RectangleStrokeModifier())
+                    .fill(viewModel.isReceiverFieldActivated ? .white : .disabledButtonBackground)
+                    .modifier(RectangleStrokeModifier(selectedColor: viewModel.isReceiverFieldActivated ? .white : .disabledButtonBackground))
             )
             .frame(width: 350, height: 60)
     }

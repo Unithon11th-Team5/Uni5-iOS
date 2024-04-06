@@ -11,7 +11,6 @@ struct MakeLetterState {
     var senderName: String = ""
     var arrivalDate: Date = Date()
     var messageContent: String = ""
-    var isToMyself: Bool = false
     var receiverName: String = ""
     var eventType: String
 }
@@ -19,6 +18,8 @@ struct MakeLetterState {
 enum MakeLetterInput {
     /// 메시지 데이터 변경됨
     case invoiceDataChanged
+    /// 나에게 전송 체크/해제됨
+    case sendToMyselfChanged
     /// 전송 버튼 선택
     case sendButtonTapped
     /// 팝업 확인 버튼 선택
@@ -33,7 +34,15 @@ class MakeLetterViewModel: ViewModel {
             self.trigger(.invoiceDataChanged)
         }
     }
+    @Published var isToMySelfChecked: Bool = false {
+        didSet {
+            self.trigger(.sendToMyselfChanged)
+        }
+    }
+    
     @Published var isButtonActivated: Bool = false
+    @Published var isReceiverFieldActivated: Bool = true
+    
     @Published var isShowCalanderPopup: Bool = false
     @Published var isShowLastCheckPopup: Bool = false
     
@@ -48,6 +57,8 @@ class MakeLetterViewModel: ViewModel {
         // Input Changed
         case .invoiceDataChanged:
             self.changeButtonValidationSate()
+        case .sendToMyselfChanged:
+            self.changeReceiverFieldValidationState()
             
         // Button Tap
         case .sendButtonTapped:
@@ -74,6 +85,10 @@ extension MakeLetterViewModel {
     
     private func changeButtonValidationSate() {
         self.isButtonActivated = self.checkButtonValidation()
+    }
+    
+    private func changeReceiverFieldValidationState() {
+        self.isReceiverFieldActivated = !self.isToMySelfChecked
     }
 }
 
