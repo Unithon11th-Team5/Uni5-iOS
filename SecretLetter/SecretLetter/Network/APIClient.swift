@@ -23,20 +23,24 @@ class APIClient {
 extension APIClient {
     
     /// 애플 로그인
-    func appleSignIn(_ param: AuthorizationRequest) {
+    func appleSignIn(_ param: AuthorizationRequest) async throws -> Bool {
         let requestUrl = url("login/apple")
-        AF.request(
-            requestUrl,
-            method: .post,
-            parameters: param,
-            encoder: JSONParameterEncoder.default,
-            headers: ["Content-Type": "application/json"]
-        ).responseDecodable(of: AuthenticationResponse.self) { response in
-            switch response.result {
-            case .success(let json):
-                UserDefaults.standard.setValue(json.token, forKey: "jwtToken")
-            case .failure(let error):
-                print("Failed \(error)")
+        return try await withCheckedThrowingContinuation { continuation in
+            AF.request(
+                requestUrl,
+                method: .post,
+                parameters: param,
+                encoder: JSONParameterEncoder.default,
+                headers: ["Content-Type": "application/json"]
+            ).responseDecodable(of: AuthenticationResponse.self) { response in
+                switch response.result {
+                case .success(let json):
+                    UserDefaults.standard.setValue(json.token, forKey: "jwtToken")
+                    continuation.resume(returning: true)
+                case .failure(let error):
+                    print("Failed \(error)")
+                    continuation.resume(throwing: error)
+                }
             }
         }
     }

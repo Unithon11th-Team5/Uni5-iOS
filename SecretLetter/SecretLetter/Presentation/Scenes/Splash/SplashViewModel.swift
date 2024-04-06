@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+struct SplashState {
+    var hasJwtToken = false
+}
+
+enum SplashInput {
+    
+}
+
+class SplashViewModel: ViewModel {
+    @Published var state = SplashState()
+    
+    func trigger(_ input: SplashInput) {
+        
+    }
+}

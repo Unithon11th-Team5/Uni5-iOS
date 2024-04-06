@@ -12,13 +12,11 @@ import Foundation
      "email": "0217dayun@naver.com",
      "token": "apple id token",
      "name": "다연",
-     "authorizationCode": "authorization code",
  }
  */
 
 struct AuthorizationRequest: Codable {
     let email: String
     let token: String
-//    let name: String
-//    let authorizationCode: String
+    let name: String
 }
