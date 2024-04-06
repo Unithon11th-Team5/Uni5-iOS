@@ -21,6 +21,7 @@ struct SearchFieldView: View {
             HStack {
                 TextField("유저 검색", text: $keyword)
                     .accentColor(.black)
+                    .frame(height: 30)
                     .modifier(RectangleStrokeModifier())
                 
                 NavigationLink(destination: {
@@ -28,11 +29,11 @@ struct SearchFieldView: View {
                 }, label: {
                     Image(systemName: "magnifyingglass")
                         .foregroundColor(.black)
+                        .frame(width: 1, height: 30)
                         .modifier(RectangleStrokeModifier())
-
                 })
             }
-            .frame(width: UIScreen.main.bounds.width - 100, height: 50)
+            .frame(width: UIScreen.main.bounds.width - 50, height: 30)
             
         }
     }
