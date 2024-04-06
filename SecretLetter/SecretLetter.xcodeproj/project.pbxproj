@@ -19,6 +19,8 @@
 		7D4BB3D02BC0F07A000AF299 /* MakeLetterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4BB3CF2BC0F07A000AF299 /* MakeLetterViewModel.swift */; };
 		7D4BB3D22BC0F111000AF299 /* ReveivedLetterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4BB3D12BC0F111000AF299 /* ReveivedLetterViewModel.swift */; };
 		7DD2C2562BC1099500F1A646 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD2C2552BC1099500F1A646 /* APIClient.swift */; };
+		7DD2C25A2BC1103700F1A646 /* SendMessageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD2C2592BC1103700F1A646 /* SendMessageRequest.swift */; };
+		7DD2C25E2BC1111900F1A646 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD2C25D2BC1111900F1A646 /* ErrorResponse.swift */; };
 		7DFE3BBF2BC108B100BD52C9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7DFE3BBE2BC108B100BD52C9 /* Alamofire */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		7D4BB3CF2BC0F07A000AF299 /* MakeLetterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeLetterViewModel.swift; sourceTree = "<group>"; };
 		7D4BB3D12BC0F111000AF299 /* ReveivedLetterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReveivedLetterViewModel.swift; sourceTree = "<group>"; };
 		7DD2C2552BC1099500F1A646 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		7DD2C2592BC1103700F1A646 /* SendMessageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageRequest.swift; sourceTree = "<group>"; };
+		7DD2C25D2BC1111900F1A646 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,8 +162,34 @@
 			isa = PBXGroup;
 			children = (
 				7DD2C2552BC1099500F1A646 /* APIClient.swift */,
+				7DD2C2582BC10FCD00F1A646 /* Model */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		7DD2C2582BC10FCD00F1A646 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7DD2C25B2BC1110100F1A646 /* RequestModel */,
+				7DD2C25C2BC1110900F1A646 /* ResponseModel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7DD2C25B2BC1110100F1A646 /* RequestModel */ = {
+			isa = PBXGroup;
+			children = (
+				7DD2C2592BC1103700F1A646 /* SendMessageRequest.swift */,
+			);
+			path = RequestModel;
+			sourceTree = "<group>";
+		};
+		7DD2C25C2BC1110900F1A646 /* ResponseModel */ = {
+			isa = PBXGroup;
+			children = (
+				7DD2C25D2BC1111900F1A646 /* ErrorResponse.swift */,
+			);
+			path = ResponseModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +272,8 @@
 				7D4BB3C22BC0EF5C000AF299 /* SplashViewModel.swift in Sources */,
 				7D4BB3C42BC0EF68000AF299 /* HomeView.swift in Sources */,
 				7D4BB3CE2BC0F02E000AF299 /* HomeViewModel.swift in Sources */,
+				7DD2C25E2BC1111900F1A646 /* ErrorResponse.swift in Sources */,
+				7DD2C25A2BC1103700F1A646 /* SendMessageRequest.swift in Sources */,
 				7D4BB3B22BC0E56D000AF299 /* SplashView.swift in Sources */,
 				7D4BB3CB2BC0EFFC000AF299 /* ReceivedLetterViewView.swift in Sources */,
 				7D4BB3B02BC0E56D000AF299 /* SecretLetterApp.swift in Sources */,
