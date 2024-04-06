@@ -20,7 +20,7 @@ struct HomeView: View {
                             .foregroundStyle(Color.text)
                             .accentColor(.text)
                     }
-                TempView()
+                ProfileView()
                     .tabItem {
                         Image(systemName: "person.fill")
                         Text("프로필")
