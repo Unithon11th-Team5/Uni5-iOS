@@ -8,36 +8,37 @@
 import Foundation
 
 struct ProfileState {
-    var name: String = ""
-    var email: String = ""
-    var events: [MemberEventRequest] = []
+    var name = UserDefaults.standard.string(forKey: "name")!
+    var email = UserDefaults.standard.string(forKey: "email")!
+    var nickname: String {
+        String(email.split(separator: "@")[0])
+    }
+    var events: [Event] = []
 }
 
 enum ProfileInput {
-    case selectEvent(EventType)
+    case onAppear
 }
 
 class ProfileViewModel: ViewModel {
     @Published var state: ProfileState = ProfileState()
     
-    init() {
-        self.requestUserInfo()
-        self.requestEventList()
-    }
-    
     func trigger(_ input: ProfileInput) {
-
+        switch input {
+        case .onAppear:
+            requestEventList()
+        }
     }
 }
 
 extension ProfileViewModel {
-    
-    private func requestUserInfo() {
-        self.state.name = "김영지"
-        self.state.email = "elice@email.com"
-    }
-    
     private func requestEventList() {
-        self.state.events = []
+        Task {
+            let events = try await APIClient().event(nickname: state.nickname)
+            await MainActor.run {
+                state.events = events
+                print(events)
+            }
+        }
     }
 }

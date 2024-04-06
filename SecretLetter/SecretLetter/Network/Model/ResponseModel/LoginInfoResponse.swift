@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct LoginInfoResponse: Codable {
+    let id: String
+    let nickname: String
+    let identifier: String
+    let name: String
+}

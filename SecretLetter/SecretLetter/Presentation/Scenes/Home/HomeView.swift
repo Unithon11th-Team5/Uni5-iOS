@@ -18,7 +18,7 @@ struct HomeView: View {
             TabView(selection: $viewModel.state.selectedTabTag) {
                 ReceivedLetterView()
                     .tabItem {
-                        Image(.bubble)
+                        Image(systemName: "bubble.left.fill")
                         Text("수신함")
                             .foregroundStyle(Color.text)
                             .accentColor(.text)

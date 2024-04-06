@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+struct EventsResponse: Codable {
+    let events: [Event]
+}
+
+struct Event: Codable, Identifiable {
+    let id: String
+    let content: String
+    let type: String
+    let plannedAt: String
+}
