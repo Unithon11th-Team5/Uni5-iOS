@@ -1,5 +1,5 @@
 //
-//  ProfileView.swift
+//  SearchResultView.swift
 //  SecretLetter
 //
 //  Created by Daegeon Choi on 4/7/24.
@@ -7,9 +7,13 @@
 
 import SwiftUI
 
-struct ProfileView: View {
+import SwiftUI
+
+struct SearchResultView: View {
     
-    @StateObject var viewModel: ProfileViewModel = ProfileViewModel()
+    @Environment(\.presentationMode) var presentationMode
+    @StateObject var viewModel: SearchResultViewModel
+    
     
     var body: some View {
         ZStack {
@@ -27,10 +31,10 @@ struct ProfileView: View {
                         .foregroundStyle(.black)
                     HStack(alignment: .bottom) {
                         Image(systemName: "person.fill")
-                        Text(viewModel.state.name)
+                        Text(viewModel.state.name ?? "")
                             .font(.system(size: 16, weight: .medium))
                             .foregroundStyle(.black)
-                        Text(viewModel.state.email)
+                        Text(viewModel.state.nickname)
                             .font(.system(size: 12, weight: .medium))
                             .foregroundStyle(.black)
                     }
@@ -57,7 +61,6 @@ struct ProfileView: View {
                             Text(event.content)
                                 .font(.system(size: 14, weight: .semibold))
                                 .foregroundStyle(Color.black)
-                            Spacer()
                             Text(event.plannedAt)
                                 .font(.system(size: 14, weight: .semibold))
                                 .foregroundStyle(Color.black)
@@ -67,9 +70,17 @@ struct ProfileView: View {
                     .frame(height: 60)
                     .padding(.horizontal, 24)
                 }
-                .contentMargins(.bottom, 100, for: .scrollContent)
-                
                 Spacer()
+                
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Text("돌아가기")
+                        .foregroundStyle(.black)
+                        .bold()
+                })
+                
+                Spacer().frame(height: 60)
             }
         }
         .onAppear(perform: { viewModel.trigger(.onAppear) })
@@ -77,5 +88,5 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView()
+    SearchResultView(viewModel: SearchResultViewModel(nickname: "choiysapple"))
 }

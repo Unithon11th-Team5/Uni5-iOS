@@ -123,9 +123,26 @@ extension MakeLetterView {
     }
     
     var messageContentView: some View {
-        TextField("메세지를 작성해 보세요", text: $viewModel.state.messageContent)
-            .accentColor(.black)
-            .frame(maxHeight: .infinity)
+        ZStack {
+            TextEditor(text: $viewModel.state.messageContent)
+                .accentColor(.black)
+            
+            if viewModel.state.messageContent.isEmpty {
+                VStack {
+                    HStack {
+                        Text("메시지를 입력해보세요")
+                            .foregroundStyle(.tertiary)
+                            .padding(.top, 8)
+                            .padding(.leading, 5)
+
+                        Spacer()
+                    }
+
+                    Spacer()
+                }
+            }
+        }
+        .frame(maxHeight: .infinity)
     }
     
     var isToMeView: some View {

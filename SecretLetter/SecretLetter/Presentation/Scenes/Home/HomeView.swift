@@ -13,6 +13,10 @@ struct HomeView: View {
     let screenSize = UIScreen.main.bounds.size
     @StateObject var viewModel = HomeViewModel()
     
+    init() {
+        UITabBar.appearance().barTintColor = UIColor(named: "GridBackgroundColor3") ?? .systemTeal
+    }
+    
     var body: some View {
         ZStack {
             TabView(selection: $viewModel.state.selectedTabTag) {

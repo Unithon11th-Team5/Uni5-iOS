@@ -59,6 +59,9 @@ struct ReceivedLetterView: View {
                             }
                         }
                         .padding(20)
+                        .safeAreaInset(edge: .bottom, content: {
+                            Spacer().frame(height: 100)
+                        })
                     }
                 }
             }
