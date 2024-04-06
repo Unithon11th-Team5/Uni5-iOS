@@ -1,53 +1,27 @@
 //
-//  SelectEventView.swift
+//  AddEventCategoryView.swift
 //  SecretLetter
 //
-//  Created by 제나 on 4/6/24.
+//  Created by Daegeon Choi on 4/6/24.
 //
 
 import SwiftUI
 
-enum EventType: String, CaseIterable, Identifiable {
-    case cheerUp = "CHEER_UP"
-    case birthday = "BIRTHDAY"
-    case chooseock = "THANKSGIVING"
-    case christmas = "CHRISTMAS"
-    case nonEvent = "NON_EVENT"
-    case marrige = "MARRIGE"
+struct AddEventCategoryView: View {
     
-    var id: String {
-        self.rawValue
-    }
+    @StateObject var viewModel: AddEventCategoryViewModel
     
-    var korean: String {
-        switch self {
-        case .cheerUp:
-            "응원"
-        case .birthday:
-            "생일"
-        case .chooseock:
-            "명절"
-        case .christmas:
-            "연말"
-        case .nonEvent:
-            "일상"
-        case .marrige:
-            "결혼"
-        }
-    }
-}
-
-struct SelectEventView: View {
-    @StateObject var viewModel = SelectEventViewModel()
     private var eventSelected: Bool {
         viewModel.state.selectedEvent != nil
     }
+    
     private var selectedEvent: EventType? {
         if let selectedEventString = viewModel.state.selectedEvent {
             return EventType(rawValue: selectedEventString)
         }
         return nil
     }
+    
     var body: some View {
         VStack {
             Text(eventSelected ? "원하는 이벤트를\n선택해 주세요." : "시크릿 메세지,\n왜 쓰러 오셨죠?")
@@ -81,7 +55,7 @@ struct SelectEventView: View {
             .padding(.horizontal, 48)
             Spacer(minLength: 130)
             NavigationLink {
-                // TODO: - destination
+                AddEventDetailView(viewModel: AddEventDetailViewModel(type: selectedEvent ?? EventType.cheerUp))
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 10)
@@ -110,5 +84,5 @@ struct SelectEventView: View {
 }
 
 #Preview {
-    SelectEventView()
+    AddEventCategoryView(viewModel: AddEventCategoryViewModel(state: AddEventCategoryState()))
 }

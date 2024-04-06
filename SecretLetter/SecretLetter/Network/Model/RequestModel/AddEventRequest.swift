@@ -16,10 +16,12 @@ import Foundation
 
 struct AddEventRequest: Codable, DictionaryConvertor {
     let content: String
+    let type: String
     let plannedAt: String
     
-    init(content: String, date: Date) {
+    init(content: String, type: String, date: Date) {
         self.content = content
+        self.type = type
         self.plannedAt = DateHelper.shared.dateToString(date: date)
     }
 }
