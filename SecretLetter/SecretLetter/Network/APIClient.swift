@@ -189,4 +189,20 @@ extension APIClient {
             }
         }
     }
+    
+    func member(nickname: String) async throws -> MemberResponse {
+        return try await withCheckedThrowingContinuation { continuation in
+            AF.request(
+                url("member?nickname=\(nickname)"),
+                method: .get
+            ).responseDecodable(of: MemberResponse.self) { response in
+                switch response.result {
+                case .success(let json):
+                    continuation.resume(returning: json)
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                }
+            }
+        }
+    }
 }
