@@ -49,9 +49,11 @@ struct ReceivedLetterView: View {
                         ) {
                             ForEach(0..<viewModel.state.receivedLetters.count, id: \.self) { index in
                                 let bgColor = backgroundColors[index % 4]
+                                let receiverName = UserDefaults.standard.string(forKey: "name")
                                 LetterGridView(
                                     backgroundColor: bgColor,
-                                    letter: receivedLetters[index]
+                                    letter: receivedLetters[index],
+                                    receiverName: receiverName ?? "나"
                                 )
                                 .onTapGesture {
                                     viewModel.trigger(.clickedLetterGrid(receivedLetters[index].id))
