@@ -27,6 +27,8 @@
 		7DD2C2662BC11D4300F1A646 /* AddEventRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD2C2652BC11D4300F1A646 /* AddEventRequest.swift */; };
 		7DD2C2692BC11E0700F1A646 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD2C2682BC11E0700F1A646 /* DateHelper.swift */; };
 		7DFE3BBF2BC108B100BD52C9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7DFE3BBE2BC108B100BD52C9 /* Alamofire */; };
+		AD6E732C2BC1149000CF7AAC /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E732B2BC1149000CF7AAC /* ViewModel.swift */; };
+		AD6E732E2BC1200100CF7AAC /* AuthorizationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E732D2BC1200100CF7AAC /* AuthorizationRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,6 +65,8 @@
 		7DD2C2632BC11C0600F1A646 /* DictionaryConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryConverter.swift; sourceTree = "<group>"; };
 		7DD2C2652BC11D4300F1A646 /* AddEventRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventRequest.swift; sourceTree = "<group>"; };
 		7DD2C2682BC11E0700F1A646 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		AD6E732B2BC1149000CF7AAC /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		AD6E732D2BC1200100CF7AAC /* AuthorizationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				7D4BB3BE2BC0EF37000AF299 /* Scenes */,
+				AD6E732B2BC1149000CF7AAC /* ViewModel.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -192,6 +197,7 @@
 			children = (
 				7DD2C2592BC1103700F1A646 /* SendMessageRequest.swift */,
 				7DD2C2652BC11D4300F1A646 /* AddEventRequest.swift */,
+				AD6E732D2BC1200100CF7AAC /* AuthorizationRequest.swift */,
 			);
 			path = RequestModel;
 			sourceTree = "<group>";
@@ -300,8 +306,10 @@
 				7DD2C25E2BC1111900F1A646 /* ErrorResponse.swift in Sources */,
 				7DD2C25A2BC1103700F1A646 /* SendMessageRequest.swift in Sources */,
 				7D4BB3B22BC0E56D000AF299 /* SplashView.swift in Sources */,
+				AD6E732C2BC1149000CF7AAC /* ViewModel.swift in Sources */,
 				7D4BB3CB2BC0EFFC000AF299 /* ReceivedLetterViewView.swift in Sources */,
 				7DD2C2642BC11C0600F1A646 /* DictionaryConverter.swift in Sources */,
+				AD6E732E2BC1200100CF7AAC /* AuthorizationRequest.swift in Sources */,
 				7D4BB3B02BC0E56D000AF299 /* SecretLetterApp.swift in Sources */,
 				7DD2C2562BC1099500F1A646 /* APIClient.swift in Sources */,
 				7D4BB3D02BC0F07A000AF299 /* MakeLetterViewModel.swift in Sources */,
