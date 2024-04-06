@@ -15,6 +15,10 @@ struct MakeLetterView: View {
     var body: some View {
         ZStack {
             
+            NavigationLink(destination: MakeLetterResultView(letterInfo: viewModel.state), tag: true, selection: $viewModel.navigationAction) {
+                EmptyView()
+            }
+            
             // BackgroundView
             Image(.defaultBackground)
                 .resizable()
