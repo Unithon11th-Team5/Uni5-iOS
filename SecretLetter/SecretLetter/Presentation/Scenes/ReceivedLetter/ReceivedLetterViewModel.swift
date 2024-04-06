@@ -10,10 +10,13 @@ import Foundation
 
 struct ReceivedLetterState {
     var receivedLetters = [Letter]()
+    var showPopUp = false
+    var showingLetterId: String?
 }
 
 enum ReceivedLetterInput {
     case onAppear
+    case clickedLetterGrid(String)
 }
 
 class ReceivedLetterViewModel: ViewModel {
@@ -23,6 +26,8 @@ class ReceivedLetterViewModel: ViewModel {
         switch input {
         case .onAppear:
             onAppear()
+        case .clickedLetterGrid(let id):
+            clickedLetterGrid(id)
         }
     }
     
@@ -43,5 +48,10 @@ class ReceivedLetterViewModel: ViewModel {
         } catch {
             print("=== error: \(error)")
         }
+    }
+    
+    private func clickedLetterGrid(_ id: String) {
+        state.showingLetterId = id
+        state.showPopUp = true
     }
 }

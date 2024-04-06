@@ -40,6 +40,7 @@
 		ADB6C2A22BC13CDA00B33106 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB6C2A12BC13CDA00B33106 /* SplashViewModel.swift */; };
 		ADB6C2A62BC17D4500B33106 /* ReceiveLettersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB6C2A52BC17D4500B33106 /* ReceiveLettersResponse.swift */; };
 		ADB6C2A82BC1882F00B33106 /* LetterGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB6C2A72BC1882F00B33106 /* LetterGridView.swift */; };
+		ADB6C2AA2BC1A46800B33106 /* SingleLetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB6C2A92BC1A46800B33106 /* SingleLetterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -89,6 +90,7 @@
 		ADB6C2A12BC13CDA00B33106 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		ADB6C2A52BC17D4500B33106 /* ReceiveLettersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveLettersResponse.swift; sourceTree = "<group>"; };
 		ADB6C2A72BC1882F00B33106 /* LetterGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterGridView.swift; sourceTree = "<group>"; };
+		ADB6C2A92BC1A46800B33106 /* SingleLetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLetterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 				7D4BB3CA2BC0EFFC000AF299 /* ReceivedLetterView.swift */,
 				7D4BB3D12BC0F111000AF299 /* ReceivedLetterViewModel.swift */,
 				ADB6C2A72BC1882F00B33106 /* LetterGridView.swift */,
+				ADB6C2A92BC1A46800B33106 /* SingleLetterView.swift */,
 			);
 			path = ReceivedLetter;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				7DD2C2692BC11E0700F1A646 /* DateHelper.swift in Sources */,
 				ADB6C29D2BC13A0200B33106 /* AuthenticationResponse.swift in Sources */,
 				7DD2C2732BC1848A00F1A646 /* MakeLetterResultView.swift in Sources */,
+				ADB6C2AA2BC1A46800B33106 /* SingleLetterView.swift in Sources */,
 				7D4BB3C62BC0EFB1000AF299 /* MakeLetterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
