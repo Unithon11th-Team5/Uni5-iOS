@@ -19,6 +19,11 @@ struct SplashView: View {
                 .ignoresSafeArea()
             
             VStack {
+//                Spacer()
+//                Rectangle()
+//                    .frame(width: 50, height: 50)
+//                    .foregroundStyle(.white)
+//                    .modifier(RectangleContainerModifier())
                 Spacer()
                 
                 SignInWithAppleButton { request in

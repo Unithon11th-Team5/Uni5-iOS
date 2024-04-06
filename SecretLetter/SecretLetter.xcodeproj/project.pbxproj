@@ -27,6 +27,7 @@
 		7DD2C2662BC11D4300F1A646 /* AddEventRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD2C2652BC11D4300F1A646 /* AddEventRequest.swift */; };
 		7DD2C2692BC11E0700F1A646 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD2C2682BC11E0700F1A646 /* DateHelper.swift */; };
 		7DD2C26B2BC120E700F1A646 /* MemberEventRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD2C26A2BC120E700F1A646 /* MemberEventRequest.swift */; };
+		7DD2C26E2BC128DB00F1A646 /* RectangleStrokeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD2C26D2BC128DB00F1A646 /* RectangleStrokeModifier.swift */; };
 		7DFE3BBF2BC108B100BD52C9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7DFE3BBE2BC108B100BD52C9 /* Alamofire */; };
 		AD6E732C2BC1149000CF7AAC /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E732B2BC1149000CF7AAC /* ViewModel.swift */; };
 		AD6E732E2BC1200100CF7AAC /* AuthorizationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E732D2BC1200100CF7AAC /* AuthorizationRequest.swift */; };
@@ -67,6 +68,7 @@
 		7DD2C2652BC11D4300F1A646 /* AddEventRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventRequest.swift; sourceTree = "<group>"; };
 		7DD2C2682BC11E0700F1A646 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		7DD2C26A2BC120E700F1A646 /* MemberEventRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberEventRequest.swift; sourceTree = "<group>"; };
+		7DD2C26D2BC128DB00F1A646 /* RectangleStrokeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleStrokeModifier.swift; sourceTree = "<group>"; };
 		AD6E732B2BC1149000CF7AAC /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		AD6E732D2BC1200100CF7AAC /* AuthorizationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRequest.swift; sourceTree = "<group>"; };
 		AD6E732F2BC1261200CF7AAC /* SecretLetter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SecretLetter.entitlements; sourceTree = "<group>"; };
@@ -125,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				7D4BB3BE2BC0EF37000AF299 /* Scenes */,
-				AD6E732B2BC1149000CF7AAC /* ViewModel.swift */,
+				7DD2C26C2BC1282100F1A646 /* Common */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -133,6 +135,7 @@
 		7D4BB3BE2BC0EF37000AF299 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				AD6E732B2BC1149000CF7AAC /* ViewModel.swift */,
 				7D4BB3BF2BC0EF3F000AF299 /* Splash */,
 				7D4BB3C82BC0EFE9000AF299 /* Home */,
 				7D4BB3C92BC0EFEE000AF299 /* MakeLetter */,
@@ -226,6 +229,14 @@
 			path = NetworkHelper;
 			sourceTree = "<group>";
 		};
+		7DD2C26C2BC1282100F1A646 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7DD2C26D2BC128DB00F1A646 /* RectangleStrokeModifier.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -307,6 +318,7 @@
 				7D4BB3C42BC0EF68000AF299 /* HomeView.swift in Sources */,
 				7D4BB3CE2BC0F02E000AF299 /* HomeViewModel.swift in Sources */,
 				7DD2C2602BC1187900F1A646 /* UnreadMessageResponse.swift in Sources */,
+				7DD2C26E2BC128DB00F1A646 /* RectangleStrokeModifier.swift in Sources */,
 				7DD2C2662BC11D4300F1A646 /* AddEventRequest.swift in Sources */,
 				7DD2C25E2BC1111900F1A646 /* ErrorResponse.swift in Sources */,
 				7DD2C26B2BC120E700F1A646 /* MemberEventRequest.swift in Sources */,
@@ -459,7 +471,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SecretLetter/Preview Content\"";
-				DEVELOPMENT_TEAM = 7D5PZJWQ9T;
+				DEVELOPMENT_TEAM = ZW6466CHF4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Secret Letter";
@@ -492,7 +504,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SecretLetter/Preview Content\"";
-				DEVELOPMENT_TEAM = 7D5PZJWQ9T;
+				DEVELOPMENT_TEAM = ZW6466CHF4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Secret Letter";
