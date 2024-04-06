@@ -104,15 +104,16 @@ extension MakeLetterViewModel {
         
         guard checkButtonValidation() == true else { return }
         
+        let myNickname = UserDefaults.standard.string(forKey: "email")?.split(separator: "@").first
+        
         let message = SendMessageRequest(
-            receiverNickname: isToMySelfChecked ? userName : state.receiverName,
+            receiverNickname: isToMySelfChecked ? String(myNickname ?? "") : state.receiverName,
             senderName: state.senderName,
             content: state.messageContent,
             type: state.eventType.id,
             sendPlannedAtDate: state.arrivalDate
         )
         
-        print(message)
         self.api.sendMessage(message: message)
     }
 

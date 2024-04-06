@@ -54,7 +54,9 @@ struct HomeView: View {
             )
         }
         .fullScreenCover(isPresented: $viewModel.state.navigateToMakeLetter) {
-            MakeLetterCategoryView()
+            NavigationView {
+                MakeLetterCategoryView()
+            }
         }
         .fullScreenCover(isPresented: $viewModel.state.navigateToProfile) {
             NavigationView {
