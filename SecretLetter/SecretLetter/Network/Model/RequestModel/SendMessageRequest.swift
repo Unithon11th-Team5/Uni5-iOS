@@ -17,7 +17,7 @@ import Foundation
  }
  */
 
-struct SendMessageRequest: Codable {
+struct SendMessageRequest: Codable, DictionaryConvertor {
     let receiverNickname: String
     let senderName: String
     let content: String

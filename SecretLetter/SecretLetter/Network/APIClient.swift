@@ -18,7 +18,7 @@ class APIClient {
     
 }
 
-// MARK: Sign In
+// MARK: 로그인
 extension APIClient {
     
     /// 애플 로그인
@@ -39,15 +39,74 @@ extension APIClient {
     }
 }
 
-// MARK: Message Related
+// MARK: 메시지
 extension APIClient {
-    /*
-     POST http://3.35.112.110/messages/send
-     Content-Type: application/json
-     Authorization: Bearer {jwt Token}
-     */
-    func sendMessage() {
-        // TODO: 일해라 핫산
+    
+    /// 메시지 전송
+    func sendMessage(message: SendMessageRequest) {
+        
+        let token = "jwt"
+        let param = message.toDictionary()
+        
+        AF.request(
+            url("messages/send"),
+            method: .post,
+            headers: ["Content-Type": "application/json", "Authorization": "Bearer \(token)"]
+        ).responseJSON { response in
+            switch response.result {
+            case .success(let data): break
+            case .failure(let error): break
+            }
+        }
     }
 
+    /// 읽지 않은 메시지 리스트 조회
+    func unreadMessage() {
+        
+        let token = "jwt"
+        
+        AF.request(
+            url("messages/unread"),
+            method: .post,
+            headers: ["Authorization": "Bearer \(token)"]
+        ).responseJSON { response in
+            switch response.result {
+            case .success(let data): break
+            case .failure(let error): break
+            }
+        }
+    }
+    
+    /// 받은 단일 메시지 조회
+    func singleMessage(id: String) {
+        let token = "jwt"
+        
+        AF.request(
+            url("messages/\(id)"),
+            method: .get,
+            headers: ["Authorization": "Bearer \(token)"]
+        ).responseJSON { response in
+            switch response.result {
+            case .success(let data): break
+            case .failure(let error): break
+            }
+        }
+    }
+}
+
+// MARK: 이벤트
+extension APIClient {
+    func addEvent(content: String, date: Date) {
+        
+        AF.request(
+            url("events"),
+            method: .get,
+            headers: ["Content-Type": "application/json"]
+        ).responseJSON { response in
+            switch response.result {
+            case .success(let data): break
+            case .failure(let error): break
+            }
+        }
+    }
 }
