@@ -57,6 +57,7 @@ struct ProfileView: View {
                             Text(event.content)
                                 .font(.system(size: 14, weight: .semibold))
                                 .foregroundStyle(Color.black)
+                            Spacer()
                             Text(event.plannedAt)
                                 .font(.system(size: 14, weight: .semibold))
                                 .foregroundStyle(Color.black)
