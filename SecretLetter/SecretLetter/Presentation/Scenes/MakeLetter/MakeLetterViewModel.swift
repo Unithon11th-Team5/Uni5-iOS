@@ -31,6 +31,7 @@ class MakeLetterViewModel: ViewModel {
         }
     }
     @Published var isButtonActivated: Bool = false
+    @Published var isShowCalanderPopup: Bool = false
     
     let api = APIClient()
     
@@ -82,6 +83,7 @@ extension MakeLetterViewModel {
             sendPlannedAtDate: state.arrivalDate
         )
         
+        print(message)
         self.api.sendMessage(message: message)
     }
 

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PopupView
 
 struct MakeLetterView: View {
     
@@ -42,9 +43,16 @@ struct MakeLetterView: View {
                 Spacer().frame(height: 48)
             }
         }
+        .popup(isPresented: $viewModel.isShowCalanderPopup) {
+            calendarPopupView
+        } customize: {
+            $0.closeOnTap(false)
+                .backgroundColor(.black.opacity(0.4))
+        }
     }
 }
 
+// MARK: Contents
 extension MakeLetterView {
     var messageFieldView: some View {
         VStack {
@@ -64,13 +72,14 @@ extension MakeLetterView {
             HStack {
                 Text("From. ")
                 TextField("보내는 사람", text: $viewModel.state.senderName)
+                    .accentColor(.black)
             }
             .bold()
             
             Spacer()
             
             Button(action: {
-                print("Open Calander")
+                viewModel.isShowCalanderPopup.toggle()
             }, label: {
                 Image(systemName: "calendar")
                     .foregroundStyle(.black)
@@ -80,6 +89,7 @@ extension MakeLetterView {
     
     var messageContentView: some View {
         TextField("메세지를 작성해 보세요", text: $viewModel.state.messageContent)
+            .accentColor(.black)
     }
     
     var isToMeView: some View {
@@ -118,6 +128,7 @@ extension MakeLetterView {
     
     var receiverNameField: some View {
         TextField("받는사람 ID를 입력하세요", text: $viewModel.state.receiverName)
+            .accentColor(.black)
             .multilineTextAlignment(.center)
             .padding()
             .background(
@@ -141,6 +152,39 @@ extension MakeLetterView {
                         .foregroundStyle(viewModel.isButtonActivated ? .white : .disabledButtonStroke)
                 }
         })
+    }
+}
+
+// MARK: Popup
+extension MakeLetterView {
+    var calendarPopupView: some View {
+        VStack {
+            DatePicker(
+                "도착 시간",
+                selection: $viewModel.state.arrivalDate,
+                displayedComponents: .date
+            )
+            .datePickerStyle(GraphicalDatePickerStyle())
+            .accentColor(.calendarAccent)
+                
+            
+            Button(action: {
+                viewModel.isShowCalanderPopup.toggle()
+            }, label: {
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(.black)
+                    .frame(width: 350, height: 60)
+                    .overlay(alignment: .center) {
+                        Text("확인")
+                            .foregroundStyle(.white)
+                    }
+            })
+        }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .fill(.white)
+        )
     }
 }
 

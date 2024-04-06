@@ -10,7 +10,7 @@ import Alamofire
 
 class APIClient {
     
-    private let baseURL: String = "http://3.35.112.110/"
+    private let baseURL: String = "https://secret-message.kro.kr/"
     
     private func url(_ path: String) -> String {
         return "\(self.baseURL)\(path)"
