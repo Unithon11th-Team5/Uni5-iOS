@@ -13,6 +13,7 @@ struct MakeLetterState {
     var messageContent: String = ""
     var isToMyself: Bool = false
     var receiverName: String = ""
+    var eventType: String
 }
 
 enum MakeLetterInput {
@@ -35,8 +36,8 @@ class MakeLetterViewModel: ViewModel {
     
     let api = APIClient()
     
-    init(senderName: String) {
-        self.state = MakeLetterState(senderName: senderName)
+    init(senderName: String, eventType: String) {
+        self.state = MakeLetterState(senderName: senderName, eventType: eventType)
     }
     
     func trigger(_ input: MakeLetterInput) {
@@ -79,7 +80,7 @@ extension MakeLetterViewModel {
             receiverNickname: state.receiverName,
             senderName: state.senderName,
             content: state.messageContent,
-            type: "",   // TODO: 바꿔야됨
+            type: state.eventType,
             sendPlannedAtDate: state.arrivalDate
         )
         
