@@ -47,7 +47,7 @@ struct ReceivedLetterView: View {
                             columns: [GridItem(), GridItem()],
                             spacing: 16
                         ) {
-                            ForEach(receivedLetters.indices) { index in
+                            ForEach(0..<viewModel.state.receivedLetters.count, id: \.self) { index in
                                 let bgColor = backgroundColors[index % 4]
                                 LetterGridView(
                                     backgroundColor: bgColor,
