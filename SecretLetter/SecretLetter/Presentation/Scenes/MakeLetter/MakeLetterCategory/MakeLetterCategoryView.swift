@@ -59,7 +59,7 @@ struct MakeLetterCategoryView: View {
                     MakeLetterView(
                         viewModel: MakeLetterViewModel(
                             userName: username, 
-                            eventType: selectedEvent!.rawValue
+                            eventType: selectedEvent ?? .cheerUp
                         )
                     )
                 }

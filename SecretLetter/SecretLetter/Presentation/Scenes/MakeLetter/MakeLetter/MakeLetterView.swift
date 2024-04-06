@@ -41,7 +41,7 @@ struct MakeLetterView: View {
                 sendButton
                 Spacer().frame(height: 16)
                 Button(action: {
-                    viewModel.trigger(.goToHomeButtonTapped)
+                    UIApplication.shared.windows.first?.rootViewController?.dismiss(animated: true)
                 }, label: {
                     Text("홈으로 가기")
                 })
