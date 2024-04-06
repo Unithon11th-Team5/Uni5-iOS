@@ -39,7 +39,15 @@ struct MakeLetterView: View {
                 receiverNameField
                 Spacer().frame(height: 24)
                 sendButton
-                Spacer().frame(height: 48)
+                Spacer().frame(height: 16)
+                Button(action: {
+                    viewModel.trigger(.goToHomeButtonTapped)
+                }, label: {
+                    Text("홈으로 가기")
+                })
+                .accentColor(.text)
+                
+                Spacer().frame(height: 8)
             }
         }
         
@@ -51,6 +59,7 @@ struct MakeLetterView: View {
                 .backgroundColor(.black.opacity(0.4))
         }
         
+        // 최종 확인 팝업
         .popup(isPresented: $viewModel.isShowLastCheckPopup) {
             lastCheckPopup
         } customize: {
@@ -168,6 +177,7 @@ extension MakeLetterView {
                         .foregroundStyle(viewModel.isButtonActivated ? .white : .disabledButtonStroke)
                 }
         })
+        .disabled(!viewModel.isButtonActivated)
     }
 }
 
@@ -252,5 +262,5 @@ extension MakeLetterView {
 }
 
 #Preview {
-    MakeLetterView(viewModel: MakeLetterViewModel(senderName: "보내는사람", eventType: "CHEER_UP"))
+    MakeLetterView(viewModel: MakeLetterViewModel(userName: "보내는사람", eventType: "CHEER_UP"))
 }
