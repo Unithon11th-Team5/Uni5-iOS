@@ -12,7 +12,7 @@ struct LetterGridView: View {
     let letter: Letter
     var body: some View {
         VStack {
-            Text()
+            Text("")
         }
     }
 }
