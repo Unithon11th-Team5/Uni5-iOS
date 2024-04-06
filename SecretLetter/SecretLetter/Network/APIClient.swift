@@ -22,12 +22,13 @@ class APIClient {
 extension APIClient {
     
     /// 애플 로그인
-    func appleSignIn() {
-        
+    func appleSignIn(_ param: AuthorizationRequest) {
+        let requestUrl = url("login/apple")
         AF.request(
-            "\(baseURL)login/apple",
+            requestUrl,
             method: .post,
-            headers: ["Content-Type":"application/json"]
+            parameters: param.toDictionary(),
+            headers: ["Content-Type": "application/json"]
         ).responseJSON { response in
             switch response.result {
             case .success(let data):
