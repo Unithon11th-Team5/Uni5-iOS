@@ -50,6 +50,8 @@
 		ADB6C2A62BC17D4500B33106 /* ReceiveLettersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB6C2A52BC17D4500B33106 /* ReceiveLettersResponse.swift */; };
 		ADB6C2A82BC1882F00B33106 /* LetterGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB6C2A72BC1882F00B33106 /* LetterGridView.swift */; };
 		ADB6C2AA2BC1A46800B33106 /* SingleLetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB6C2A92BC1A46800B33106 /* SingleLetterView.swift */; };
+		ADB6C2AC2BC1CC5500B33106 /* LoginInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB6C2AB2BC1CC5500B33106 /* LoginInfoResponse.swift */; };
+		ADB6C2AE2BC1CDCA00B33106 /* EventsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB6C2AD2BC1CDCA00B33106 /* EventsResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -109,6 +111,8 @@
 		ADB6C2A52BC17D4500B33106 /* ReceiveLettersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveLettersResponse.swift; sourceTree = "<group>"; };
 		ADB6C2A72BC1882F00B33106 /* LetterGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterGridView.swift; sourceTree = "<group>"; };
 		ADB6C2A92BC1A46800B33106 /* SingleLetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLetterView.swift; sourceTree = "<group>"; };
+		ADB6C2AB2BC1CC5500B33106 /* LoginInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoResponse.swift; sourceTree = "<group>"; };
+		ADB6C2AD2BC1CDCA00B33106 /* EventsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +301,8 @@
 				7DD2C26A2BC120E700F1A646 /* MemberEventRequest.swift */,
 				ADB6C29C2BC13A0200B33106 /* AuthenticationResponse.swift */,
 				ADB6C2A52BC17D4500B33106 /* ReceiveLettersResponse.swift */,
+				ADB6C2AB2BC1CC5500B33106 /* LoginInfoResponse.swift */,
+				ADB6C2AD2BC1CDCA00B33106 /* EventsResponse.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -455,6 +461,7 @@
 				ADB6C2A82BC1882F00B33106 /* LetterGridView.swift in Sources */,
 				7D4BB3C22BC0EF5C000AF299 /* AuthenticationViewModel.swift in Sources */,
 				7D4BB3C42BC0EF68000AF299 /* HomeView.swift in Sources */,
+				ADB6C2AE2BC1CDCA00B33106 /* EventsResponse.swift in Sources */,
 				ADB6C2A02BC13CD000B33106 /* SplashView.swift in Sources */,
 				7D4BB3CE2BC0F02E000AF299 /* HomeViewModel.swift in Sources */,
 				7DD2C2602BC1187900F1A646 /* UnreadMessageResponse.swift in Sources */,
@@ -487,6 +494,7 @@
 				7DD2C2692BC11E0700F1A646 /* DateHelper.swift in Sources */,
 				7D1737162BC1BE7A00E10580 /* MakeLetterCategoryViewModel.swift in Sources */,
 				ADB6C29D2BC13A0200B33106 /* AuthenticationResponse.swift in Sources */,
+				ADB6C2AC2BC1CC5500B33106 /* LoginInfoResponse.swift in Sources */,
 				7D1737142BC1BE6D00E10580 /* MakeLetterCategoryView.swift in Sources */,
 				7DD2C2732BC1848A00F1A646 /* MakeLetterResultView.swift in Sources */,
 				ADB6C2AA2BC1A46800B33106 /* SingleLetterView.swift in Sources */,

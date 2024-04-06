@@ -19,29 +19,57 @@ struct ProfileView: View {
                 .ignoresSafeArea()
             
             VStack {
+                Spacer()
+                    .frame(height: 65)
                 VStack(spacing: 23) {
                     Text("프로필")
-                        .font(.title)
-                        .bold()
-                    
-                    HStack {
+                        .font(.system(size: 24, weight: .bold))
+                        .foregroundStyle(.black)
+                    HStack(alignment: .bottom) {
+                        Image(systemName: "person.fill")
                         Text(viewModel.state.name)
-                            .bold()
-                        
+                            .font(.system(size: 16, weight: .medium))
+                            .foregroundStyle(.black)
                         Text(viewModel.state.email)
+                            .font(.system(size: 12, weight: .medium))
+                            .foregroundStyle(.black)
                     }
-                    
                     Rectangle()
                         .fill(.black)
-                        .frame(width: .infinity, height: 1)
+                        .frame(width: UIScreen.main.bounds.width, height: 1)
                 }
                 
-                ForEach(viewModel.state.events, id: \.plannedAt) { event in
-                    Text(event.content)
-                        .background(.white)
+                ForEach(viewModel.state.events) { event in
+                    /* 리스트 ... 뷰 따로 ㄱ뺄게요... (좀이따) */
+                    ZStack {
+                        Rectangle()
+                            .foregroundStyle(.white)
+                            .modifier(RectangleStrokeModifier())
+                        HStack(spacing: 4) {
+                            Text(event.type)
+                                .font(.system(size: 10, weight: .bold))
+                                .foregroundStyle(.black)
+                                .padding(8)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .foregroundStyle(.accent)
+                                )
+                            Text(event.content)
+                                .font(.system(size: 14, weight: .semibold))
+                                .foregroundStyle(Color.black)
+                            Text(event.plannedAt)
+                                .font(.system(size: 14, weight: .semibold))
+                                .foregroundStyle(Color.black)
+                        }
+                        .padding(.horizontal, 24)
+                    }
+                    .frame(height: 60)
+                    .padding(.horizontal, 24)
                 }
+                Spacer()
             }
         }
+        .onAppear(perform: { viewModel.trigger(.onAppear) })
     }
 }
 

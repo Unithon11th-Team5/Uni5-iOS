@@ -46,6 +46,27 @@ extension APIClient {
             }
         }
     }
+    
+    /// get user info
+    func getUserId() async throws -> String? {
+        guard let jwtToken = jwtToken else { return nil }
+        let requestUrl = url("login/info")
+        return try await withCheckedThrowingContinuation { continuation in
+            AF.request(
+                requestUrl,
+                method: .get,
+                headers: ["Content-Type": "application/json", "Authorization": "Bearer \(String(describing: jwtToken))"]
+            ).responseDecodable(of: LoginInfoResponse.self) { response in
+                switch response.result {
+                case .success(let json):
+                    print(json.id)
+                    continuation.resume(returning: json.id)
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                }
+            }
+        }
+    }
 }
 
 // MARK: 메시지
@@ -131,9 +152,7 @@ extension APIClient {
     
     /// 이벤트 추가
     func addEvent(content: String, type: EventType, date: Date) {
-        
         guard let jwtToken = jwtToken else { return }
-        let token = jwtToken
         let param = AddEventRequest(content: content, type: type.id, date: date)
         
         AF.request(
@@ -141,25 +160,32 @@ extension APIClient {
             method: .post,
             parameters: param,
             encoder: JSONParameterEncoder.default,
-            headers: ["Content-Type": "application/json", "Authorization": "Bearer \(token)"]
+            headers: ["Content-Type": "application/json", "Authorization": "Bearer \(jwtToken)"]
         ).responseJSON { response in
             switch response.result {
-            case .success(let data): break
+            case .success(let data):
+                print(data)
             case .failure(let error): break
             }
         }
     }
     
-    
     /// 특정 멤버의 이벤트
-    func event(memberId: String) {
-        AF.request(
-            url("events?memberId=\(memberId)"),
-            method: .get
-        ).responseJSON { response in
-            switch response.result {
-            case .success(let data): break
-            case .failure(let error): break
+    func event(nickname: String) async throws -> [Event] {
+        guard let jwtToken = jwtToken else { return [] }
+        let requestUrl = url("events?nickName=\(nickname)")
+        return try await withCheckedThrowingContinuation { continuation in
+            AF.request(
+                requestUrl,
+                method: .get,
+                headers: ["Content-Type": "application/json", "Authorization": "Bearer \(String(describing: jwtToken))"]
+            ).responseDecodable(of: EventsResponse.self) { response in
+                switch response.result {
+                case .success(let json):
+                    continuation.resume(returning: json.events)
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                }
             }
         }
     }

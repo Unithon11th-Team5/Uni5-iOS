@@ -42,9 +42,11 @@ struct AddEventCompleteView: View {
                 Spacer()
                 
                 VStack {
-                    Button(action: {
-                        // TODO: 공유하기
-                    }, label: {
+                    Button {
+                        let previewImage = UIImage(named: "Letter")
+                        let activityViewController = UIActivityViewController(activityItems: [previewImage], applicationActivities: nil)
+                        UIApplication.shared.windows.first?.rootViewController?.presentedViewController?.present(activityViewController, animated: true)
+                    } label: {
                         RoundedRectangle(cornerRadius: 12)
                             .stroke(.black, lineWidth: 1)
                             .fill(.black)
@@ -53,20 +55,19 @@ struct AddEventCompleteView: View {
                                 Text("공유하기")
                                     .foregroundStyle(.white)
                             }
-                    })
+                    }
                     
-                    Button(action: {
+                    Button {
                         UIApplication.shared.windows.first?.rootViewController?.dismiss(animated: true)
-                    }, label: {
+                    } label: {
                         Text("완료")
                             .foregroundStyle(.black)
-                    })
+                    }
                 }
                 
                 Spacer().frame(height: 54)
             }
         }
-
     }
 }
 
