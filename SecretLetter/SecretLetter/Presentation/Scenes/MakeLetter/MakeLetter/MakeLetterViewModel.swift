@@ -12,7 +12,7 @@ struct MakeLetterState {
     var arrivalDate: Date = Date()
     var messageContent: String = ""
     var receiverName: String = ""
-    var eventType: String
+    var eventType: EventType
 }
 
 enum MakeLetterInput {
@@ -22,8 +22,6 @@ enum MakeLetterInput {
     case sendToMyselfChanged
     /// 전송 버튼 선택
     case sendButtonTapped
-    /// 홈으로 버튼 선택
-    case goToHomeButtonTapped
     /// 팝업 확인 버튼 선택
     case lastPopupConfirm
 }
@@ -52,7 +50,7 @@ class MakeLetterViewModel: ViewModel {
     
     let api = APIClient()
     
-    init(userName: String, eventType: String) {
+    init(userName: String, eventType: EventType) {
         self.userName = userName
         self.state = MakeLetterState(senderName: userName, eventType: eventType)
     }
@@ -69,12 +67,8 @@ class MakeLetterViewModel: ViewModel {
         // Button Tap
         case .sendButtonTapped:
             self.isShowLastCheckPopup = true
-        case .goToHomeButtonTapped:
-            self.goToHome()
-            
         case .lastPopupConfirm:
             self.postNewMessage()
-            self.goToResult()
         }
         
     }
@@ -111,7 +105,7 @@ extension MakeLetterViewModel {
             receiverNickname: isToMySelfChecked ? userName : state.receiverName,
             senderName: state.senderName,
             content: state.messageContent,
-            type: state.eventType,
+            type: state.eventType.id,
             sendPlannedAtDate: state.arrivalDate
         )
         
@@ -119,14 +113,4 @@ extension MakeLetterViewModel {
         self.api.sendMessage(message: message)
     }
 
-}
-
-extension MakeLetterViewModel {
-    private func goToHome() {
-        // TODO: 홈화면으로 이동
-    }
-    
-    private func goToResult() {
-        // TODO: 결과 화면으로 이동
-    }
 }
