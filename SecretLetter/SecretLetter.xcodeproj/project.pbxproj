@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7D1737142BC1BE6D00E10580 /* MakeLetterCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1737132BC1BE6D00E10580 /* MakeLetterCategoryView.swift */; };
 		7D1737162BC1BE7A00E10580 /* MakeLetterCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1737152BC1BE7A00E10580 /* MakeLetterCategoryViewModel.swift */; };
+		7D17371C2BC1D60400E10580 /* SearchFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D17371B2BC1D60400E10580 /* SearchFieldView.swift */; };
 		7D4BB3B02BC0E56D000AF299 /* SecretLetterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4BB3AF2BC0E56D000AF299 /* SecretLetterApp.swift */; };
 		7D4BB3B22BC0E56D000AF299 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4BB3B12BC0E56D000AF299 /* AuthenticationView.swift */; };
 		7D4BB3B42BC0E570000AF299 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D4BB3B32BC0E570000AF299 /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 /* Begin PBXFileReference section */
 		7D1737132BC1BE6D00E10580 /* MakeLetterCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeLetterCategoryView.swift; sourceTree = "<group>"; };
 		7D1737152BC1BE7A00E10580 /* MakeLetterCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeLetterCategoryViewModel.swift; sourceTree = "<group>"; };
+		7D17371B2BC1D60400E10580 /* SearchFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldView.swift; sourceTree = "<group>"; };
 		7D4BB3AC2BC0E56D000AF299 /* SecretLetter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecretLetter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4BB3AF2BC0E56D000AF299 /* SecretLetterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretLetterApp.swift; sourceTree = "<group>"; };
 		7D4BB3B12BC0E56D000AF299 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,14 @@
 			path = MakeLetterCategory;
 			sourceTree = "<group>";
 		};
+		7D1737182BC1D5C700E10580 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				7D17371B2BC1D60400E10580 /* SearchFieldView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		7D4BB3A32BC0E56D000AF299 = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +215,7 @@
 				7D4BB3C92BC0EFEE000AF299 /* MakeLetter */,
 				7D4BB3CC2BC0F008000AF299 /* ReceivedLetter */,
 				7DD2C2742BC195D400F1A646 /* AddEvent */,
+				7D1737182BC1D5C700E10580 /* Search */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -458,6 +469,7 @@
 				AD6E732C2BC1149000CF7AAC /* ViewModel.swift in Sources */,
 				7DD2C2802BC1978B00F1A646 /* AddEventCompleteView.swift in Sources */,
 				7DD2C2782BC1960800F1A646 /* AddEventDetailViewModel.swift in Sources */,
+				7D17371C2BC1D60400E10580 /* SearchFieldView.swift in Sources */,
 				7DD2C2762BC195F400F1A646 /* AddEventDetailView.swift in Sources */,
 				7D4BB3CB2BC0EFFC000AF299 /* ReceivedLetterView.swift in Sources */,
 				7DD2C2642BC11C0600F1A646 /* DictionaryConverter.swift in Sources */,
