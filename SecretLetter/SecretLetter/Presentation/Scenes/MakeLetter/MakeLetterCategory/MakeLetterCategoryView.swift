@@ -43,7 +43,7 @@ struct MakeLetterCategoryView: View {
                                 .font(.system(size: 18, weight: .bold))
                                 .foregroundStyle(Color.text)
                             Text(type.rawValue)
-                                .font(.system(size: 18, weight: .bold))
+                                .font(.system(size: 16, weight: .bold))
                                 .foregroundStyle(Color.text)
                         }
                     }
