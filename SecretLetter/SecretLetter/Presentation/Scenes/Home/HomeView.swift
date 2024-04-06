@@ -66,11 +66,13 @@ struct HomeView: View {
         .fullScreenCover(isPresented: $viewModel.state.navigateToMakeLetter) {
             NavigationView {
                 MakeLetterCategoryView()
+                    .navigationBarBackButtonHidden()
             }
         }
         .fullScreenCover(isPresented: $viewModel.state.navigateToProfile) {
             NavigationView {
                 AddEventCategoryView()
+                    .navigationBarBackButtonHidden()
             }
         }
     }
