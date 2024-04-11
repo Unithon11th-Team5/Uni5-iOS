@@ -5,9 +5,10 @@
 <!-- <img src="https://github.com/Unithon11th-Team5/UniLetter-iOS/assets/43776784/c6b67e20-5208-4378-85a2-f426fdcc157c" width="40%" alt="goal"> -->
 
 ```
+
 💌 나와 친구들을 위해 기쁘고 행복한 이벤트들을 공유하고 간단하게 메시지 주고 받을 수 있는 유니레터 서비스 입니다.
+
 ```
-[서비스 소개 페이지](https://unit-center.notion.site/UNILETTER-5-eace41e0a9e34d2ebb113148ac62b857) 
 
 <br/>
 
